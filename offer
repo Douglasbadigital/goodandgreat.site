@@ -145,7 +145,7 @@ h1.i{font-size:25px;font-weight:800;line-height:1.22;margin:14px 0 12px;letter-s
 const CONFIG = {
   brand: "Home Sculpt Pilates",
   product: "Home Sculpt Pilates",
-  checkoutPage: "checkout.html",
+  checkoutPage: "https://github.com/Douglasbadigital/goodandgreat.site/checkout",
   units: "imperial",               // "imperial" (ft/lbs) ou "metric" (cm/kg)
   termsUrl: "#", privacyUrl: "#",
   leadWebhook: "",                 // opcional: URL que recebe nome/e-mail/respostas (POST JSON)
