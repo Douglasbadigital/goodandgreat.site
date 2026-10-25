@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Sculpt Pilates Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="figures.js"></script>
+<style>
+:root{
+  --pink:#F45B9B; --pink-dark:#E03F84; --pink-soft:#FDEEF4; --pink-line:#F9C9DC;
+  --green:#22B07D; --green-soft:#E8F7F1;
+  --text:#1E1E24; --muted:#7A7A85; --line:#ECECF0; --bg:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.45}
+.wrap{max-width:480px;margin:0 auto;padding:0 16px}
+img{max-width:100%;display:block}
+h2{font-size:26px;font-weight:800;text-align:center;line-height:1.2;margin:40px 0 20px}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.timer-big{display:flex;gap:6px;align-items:flex-end}
+.timer-big .num{font-size:26px;font-weight:800;color:var(--pink)}
+.timer-big .lbl{font-size:10px;color:var(--muted);display:block;text-align:center}
+.btn{display:block;width:100%;background:var(--pink);color:#fff;border:0;border-radius:999px;padding:16px 20px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--pink-dark)}
+.btn-sm{width:auto;padding:12px 24px;font-size:14px}
+
+/* Before/after */
+.compare{margin-top:16px;border-radius:16px;overflow:hidden;background:var(--pink-soft)}
+.compare-head{display:grid;grid-template-columns:1fr 1fr;text-align:center;font-size:13px;font-weight:600;padding:10px 0}
+.compare-head span:last-child{color:var(--pink)}
+.compare-imgs{display:grid;grid-template-columns:1fr 1fr;position:relative}
+.compare-imgs .ph{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;background:#F6E6EC;border:1px dashed var(--pink-line)}
+.compare-imgs img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.compare-imgs .fig{aspect-ratio:3/4;display:flex;align-items:flex-end;justify-content:center;padding:12px 10px 0;background:#F7F3F5}
+.compare-imgs .fig>svg{height:100%;width:auto}
+.arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--pink);font-size:32px;font-weight:800}
+.compare-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px;background:#fff}
+.stat{font-size:12px;color:var(--muted);margin-bottom:10px}
+.stat b{display:block;font-size:15px;color:var(--text)}
+.bars{display:flex;gap:4px;margin-top:6px}
+.bars i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.bars i.on{background:var(--pink)}
+
+/* Promo */
+.promo{background:var(--green-soft);border-radius:16px;padding:14px}
+.promo-title{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-bottom:10px}
+.promo-row{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:10px 12px}
+.promo-code{font-weight:600;font-size:14px;display:flex;gap:6px;align-items:center}
+.promo-timer{text-align:center}
+.promo-timer .num{font-size:20px;font-weight:800;color:var(--green)}
+.promo-timer .lbl{font-size:10px;color:var(--muted)}
+
+/* Plans */
+.plans{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.plan{position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-radius:16px;padding:16px 14px;cursor:pointer;background:#fff;transition:border-color .2s}
+.plan.active{border-color:var(--pink);background:var(--pink-soft)}
+.plan.popular{padding-top:36px}
+.badge{position:absolute;top:0;left:0;right:0;background:var(--pink);color:#fff;font-size:12px;font-weight:700;text-align:center;padding:5px;border-radius:13px 13px 0 0;text-transform:uppercase}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #C8C8D0;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.plan.active .radio{border-color:var(--pink);background:var(--pink)}
+.plan.active .radio::after{content:"✓";color:#fff;font-size:12px;font-weight:800}
+.plan-info{flex:1}
+.plan-name{font-weight:700;font-size:16px}
+.plan-price{font-size:12px;color:var(--muted)}
+.plan-price s{margin-right:4px}
+.plan-day{text-align:right;background:#F4F4F6;border-radius:10px;padding:6px 10px;min-width:92px}
+.plan.active .plan-day{background:#fff}
+.plan-day s{font-size:11px;color:var(--muted);display:block}
+.plan-day b{font-size:22px;font-weight:800}
+.plan-day small{display:block;font-size:10px;color:var(--muted)}
+.disclaimer{font-size:11px;color:var(--muted);text-align:center;margin:14px 0}
+.disclaimer a{color:var(--pink)}
+
+/* Highlights */
+.hl{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.hl-ico{width:40px;height:40px;border-radius:12px;background:var(--pink-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.hl b{display:block;font-size:15px}
+.hl span{font-size:14px;color:var(--muted)}
+
+/* Ambassadors / Reviews */
+.amb{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.amb-head{display:flex;justify-content:space-between;align-items:center;padding:12px}
+.amb-user{display:flex;gap:8px;align-items:center;font-weight:600;font-size:14px}
+.amb-user i{width:32px;height:32px;border-radius:50%;background:var(--pink-soft);display:block}
+.amb-img{aspect-ratio:4/5;background:#F6E6EC;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+.amb p{padding:12px;font-size:14px}
+.note{font-size:11px;color:var(--muted);margin-top:10px}
+.review{border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.review b{display:block}
+.stars{color:#FFB800;letter-spacing:2px;margin:4px 0}
+.review p{font-size:14px;color:#44444C}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:0;text-align:left;padding:18px 28px 18px 0;font:inherit;font-weight:700;font-size:16px;position:relative;cursor:pointer;color:var(--text)}
+.faq-q::after{content:"⌄";position:absolute;right:4px;top:14px;font-size:20px;color:var(--pink);transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{display:none;padding-bottom:18px;font-size:14px;color:#55555E}
+.faq-item.open .faq-a{display:block}
+
+/* Guarantee */
+.guarantee{background:var(--pink-soft);border-radius:20px;padding:28px 20px;text-align:center;margin:40px 0}
+.guarantee h3{font-size:24px;font-weight:800;margin:12px 0}
+.guarantee p{font-size:14px;color:#44444C;margin-bottom:10px}
+.guarantee a{color:var(--pink);font-weight:600}
+footer{font-size:11px;color:var(--muted);text-align:center;padding:20px 16px 40px}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+
+<!-- ============ CONFIG: edite aqui ============ -->
+<script>
+const CONFIG = {
+  brand: "[BRAND]",
+  promoCode: "sculpt_oct26",
+  timerMinutes: 10,
+  // Links de checkout por plano
+  plans: [
+    { id:"trial", name:"1-Week Trial", sub:"4-WEEK PLAN", oldPrice:"$40.00", price:"$19.99", oldDay:"$5.71", day:"$2.86", renew:"$99.99", checkout:"#", popular:false },
+    { id:"4w",    name:"4-Week Plan",  sub:"",            oldPrice:"$99.99", price:"$49.99", oldDay:"$3.57", day:"$1.79", renew:"$99.99", checkout:"#", popular:true  },
+    { id:"12w",   name:"12-Week Plan", sub:"",            oldPrice:"$199.99",price:"$99.99", oldDay:"$2.38", day:"$1.19", renew:"$199.99",checkout:"#", popular:false }
+  ],
+  images: { now:"", goal:"" },      // ex: "now.png", "goal.png"
+  showAmbassadors: false,           // ative só com depoimentos reais
+  showReviews: false,               // ative só com avaliações reais
+  supportEmail: "[EMAIL]",
+  footerCompany: "[COMPANY NAME, ADDRESS]",
+  refundPolicyUrl: "#", privacyUrl: "#", termsUrl: "#",
+  emailParam: "email"               // nome do parâmetro de e-mail no seu checkout ("" para não enviar)
+};
+</script>
+<!-- ============================================ -->
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="timer-big">
+      <div><span class="num t-min">10</span><span class="lbl">minutes</span></div>
+      <span class="num" style="font-size:26px;font-weight:800;color:var(--pink)">:</span>
+      <div><span class="num t-sec">00</span><span class="lbl">seconds</span></div>
+    </div>
+    <a class="btn btn-sm cta" href="#">Get my plan</a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- Before / After -->
+  <section class="compare">
+    <div class="compare-head"><span>Now</span><span>Your Goal</span></div>
+    <div class="compare-imgs">
+      <div id="imgNow" class="ph">Image: current body</div>
+      <div id="imgGoal" class="ph">Image: goal body</div>
+      <span class="arrow">»</span>
+    </div>
+    <div class="compare-stats">
+      <div>
+        <div class="stat">Body fat<b id="fatNow">Dangerously High</b></div>
+        <div class="stat">Pilates level<b>Beginner</b><div class="bars"><i class="on"></i><i></i><i></i><i></i></div></div>
+      </div>
+      <div>
+        <div class="stat">Body fat<b>Normal</b></div>
+        <div class="stat">Pilates level<b>Advanced</b><div class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer block 1 -->
+  <h2>Get your Home Sculpt Pilates Plan!</h2>
+  <div class="offer"></div>
+
+  <!-- Highlights -->
+  <h2>Highlights of your plan</h2>
+  <div class="hl"><div class="hl-ico">⏱️</div><div><b>15–30 min workouts</b><span>to slim down and tone up at home</span></div></div>
+  <div class="hl"><div class="hl-ico">📅</div><div><b>7-week guided program</b><span>with a new video workout every week</span></div></div>
+  <div class="hl"><div class="hl-ico">🏠</div><div><b>Beginner-friendly routines</b><span>that you can do at home</span></div></div>
+  <div class="hl"><div class="hl-ico">🧘‍♀️</div><div><b>Pilates techniques</b><span>to improve posture and develop flexibility</span></div></div>
+
+  <!-- Ambassadors (real content only) -->
+  <section id="ambassadors" hidden>
+    <h2>Real experiences from our ambassadors</h2>
+    <div class="amb">
+      <div class="amb-head"><div class="amb-user"><i></i>[@handle]</div><span style="font-size:12px;color:var(--muted)">[followers]</span></div>
+      <div class="amb-img">Ambassador photo</div>
+      <p><b>[@handle]</b> [Real testimonial]</p>
+    </div>
+    <p class="note">*Disclaimer: Insights are based on personal use and shared as part of a paid collaboration.</p>
+  </section>
+
+  <!-- FAQ -->
+  <h2>People often ask</h2>
+  <div class="faq">
+    <div class="faq-item open">
+      <button class="faq-q">How can this plan help me lose weight?</button>
+      <div class="faq-a">Your plan gives you everything you need to sculpt your body at home: a 7-week guided program with a new video workout every week, beginner-friendly routines, and Pilates techniques to keep you progressing.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do I need any equipment?</button>
+      <div class="faq-a">No. All you need is a mat and a small space at home.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What if I'm too out of shape for these workouts?</button>
+      <div class="faq-a">Your plan starts at your current level. Beginner routines are low-impact and progress gradually, so you build strength without feeling overwhelmed.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How can I access my plan?</button>
+      <div class="faq-a">Right after purchase, you'll receive an email with access to your personalized plan. Open it on any phone, tablet, or computer.</div>
+    </div>
+  </div>
+
+  <!-- Reviews (real content only) -->
+  <section id="reviews" hidden>
+    <h2>Users love our plans</h2>
+    <div class="review"><b>[Name]</b><div class="stars">★★★★★</div><p>[Real review]</p></div>
+    <div class="review"><b>[Name]</b><div class="stars">★★★★★</div><p>[Real review]</p></div>
+    <div class="review"><b>[Name]</b><div class="stars">★★★★★</div><p>[Real review]</p></div>
+    <p class="note">*Disclaimer: Following exercise and diet plans is the key in your fitness journey and greatly impacts results. Users typically expect to lose 1–2 lbs per week. Individual results may vary.</p>
+  </section>
+
+  <!-- Offer block 2 -->
+  <h2>Get visible results in 4 weeks!</h2>
+  <div class="offer"></div>
+
+  <!-- Guarantee -->
+  <section class="guarantee">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F45B9B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto;display:block"><path d="M12 2l8 3v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+    <h3>30-day money-back guarantee</h3>
+    <p>We're confident your plan will work for you and that you'll see visible results in just 4 weeks. If you follow the plan and don't see results, we'll refund your money.</p>
+    <p>Find out more about applicable limitations in our <a class="refund-link" href="#">money-back policy</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p class="company"></p>
+  <p style="margin-top:10px"><a class="privacy-link" href="#">Privacy</a>|<a class="terms-link" href="#">Terms</a></p>
+</footer>
+
+<template id="offerTpl">
+  <div class="promo">
+    <div class="promo-title"><span style="color:var(--green)">✔</span> Your promo code is applied!</div>
+    <div class="promo-row">
+      <div class="promo-code"><span style="color:var(--green)">✓</span><span class="code"></span></div>
+      <div class="promo-timer"><span class="num t-min">10</span><span class="num"> : </span><span class="num t-sec">00</span><div class="lbl">minutes &nbsp; seconds</div></div>
+    </div>
+  </div>
+  <div class="plans"></div>
+  <a class="btn cta" href="#">Get my plan</a>
+  <p class="disclaimer"></p>
+</template>
+
+<script>
+(function(){
+  let selected = CONFIG.plans.find(p=>p.popular) || CONFIG.plans[0];
+
+  // Quiz data
+  let Q = {};
+  try{ const h=new URLSearchParams(location.search).get("hsp"); if(h) Q=JSON.parse(h); }catch(e){}
+  if(!Q.bmi){ try{ Q=JSON.parse(localStorage.getItem("hsp_quiz"))||{}; }catch(e){} }
+
+  // Promo code (nome + mês + ano, igual ao original)
+  if(Q.name){
+    const d=new Date(), mon=d.toLocaleString("en-US",{month:"short"}).toLowerCase();
+    CONFIG.promoCode = Q.name.toLowerCase().normalize("NFD").replace(/[^a-z0-9]/g,"") + "_" + mon + String(d.getFullYear()).slice(2);
+  }
+
+  // Body fat label from BMI
+  if(Q.bmi){ document.getElementById("fatNow").textContent = Q.bmi<18.5?"Low":Q.bmi<25?"Normal":Q.bmi<30?"High":"Dangerously High"; }
+
+  // Images: photo if configured, otherwise illustrated figures based on quiz answers
+  const nowFat = Q.bmi ? Math.max(0,Math.min(1,(Q.bmi-18)/18)) : ({slim:.05,mid:.4,plus:.72,over:1}[Q.build] ?? .8);
+  const goalOpt = ({thin:{fat:0},toned:{fat:.12,toned:true},curvy:{fat:.3,curvy:1},average:{fat:.32}})[Q.dream] || {fat:.12,toned:true};
+  [["imgNow",CONFIG.images.now,{fat:nowFat}],["imgGoal",CONFIG.images.goal,goalOpt]].forEach(([id,src,opt])=>{
+    const el=document.getElementById(id);
+    if(src){ el.outerHTML=`<img id="${id}" src="${src}" alt="">`; }
+    else if(window.HSPFig){ el.className="fig"; el.textContent=""; el.innerHTML=HSPFig.body(opt); }
+  });
+
+  // Checkout URL: keeps UTMs and sends e-mail
+  function buildUrl(base){
+    if(!base || base==="#") return "#";
+    try{
+      const u=new URL(base, location.href);
+      new URLSearchParams(location.search).forEach((v,k)=>{ if(k!=="hsp" && !u.searchParams.has(k)) u.searchParams.set(k,v); });
+      if(Q.email && CONFIG.emailParam) u.searchParams.set(CONFIG.emailParam, Q.email);
+      return u.toString();
+    }catch(e){ return base; }
+  }
+
+  // Offer blocks
+  const tpl=document.getElementById("offerTpl");
+  document.querySelectorAll(".offer").forEach(box=>{
+    box.appendChild(tpl.content.cloneNode(true));
+    box.querySelector(".code").textContent=CONFIG.promoCode;
+    const list=box.querySelector(".plans");
+    CONFIG.plans.forEach(p=>{
+      const el=document.createElement("div");
+      el.className="plan"+(p.popular?" popular":"");
+      el.dataset.id=p.id;
+      el.innerHTML=`${p.popular?'<div class="badge">Most popular</div>':''}
+        <div class="radio"></div>
+        <div class="plan-info"><div class="plan-name">${p.name}</div>
+          <div class="plan-price"><s>${p.oldPrice}</s>${p.price}</div></div>
+        <div class="plan-day"><s>${p.oldDay}</s><b>${p.day}</b><small>per day</small></div>`;
+      el.addEventListener("click",()=>{selected=p;render();});
+      list.appendChild(el);
+    });
+  });
+
+  function render(){
+    document.querySelectorAll(".plan").forEach(el=>el.classList.toggle("active",el.dataset.id===selected.id));
+    document.querySelectorAll(".cta").forEach(a=>a.href=buildUrl(selected.checkout));
+    document.querySelectorAll(".disclaimer").forEach(d=>{
+      d.innerHTML=`Without cancellation, before the selected discounted intro plan ends, I accept that ${CONFIG.brand} will automatically charge ${selected.renew} every 4 weeks until I cancel. You can cancel anytime. It's quick and easy.`;
+    });
+  }
+  render();
+
+  // Timer (persists per visitor session)
+  const key="hsp_deadline";
+  let deadline;
+  try{deadline=parseInt(sessionStorage.getItem(key),10);}catch(e){}
+  if(!deadline||isNaN(deadline)){
+    deadline=Date.now()+CONFIG.timerMinutes*60000;
+    try{sessionStorage.setItem(key,deadline);}catch(e){}
+  }
+  function tick(){
+    const left=Math.max(0,deadline-Date.now());
+    const m=String(Math.floor(left/60000)).padStart(2,"0");
+    const s=String(Math.floor(left%60000/1000)).padStart(2,"0");
+    document.querySelectorAll(".t-min").forEach(e=>e.textContent=m);
+    document.querySelectorAll(".t-sec").forEach(e=>e.textContent=s);
+    if(left>0) setTimeout(tick,1000);
+  }
+  tick();
+
+  // FAQ
+  document.querySelectorAll(".faq-q").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
+
+  // Optional sections & links
+  document.getElementById("ambassadors").hidden=!CONFIG.showAmbassadors;
+  document.getElementById("reviews").hidden=!CONFIG.showReviews;
+  document.querySelector(".company").textContent=CONFIG.footerCompany;
+  document.querySelector(".refund-link").href=CONFIG.refundPolicyUrl;
+  document.querySelector(".privacy-link").href=CONFIG.privacyUrl;
+  document.querySelector(".terms-link").href=CONFIG.termsUrl;
+})();
+</script>
+</body>
+</html>
