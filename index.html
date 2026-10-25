@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4691087724501129');
-fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4691087724501129');
+fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4691087724501129&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -336,7 +328,7 @@ const R = {
   el.innerHTML = `<div class="age-title">${esc(CONFIG.product.toUpperCase())} PLAN</div><div class="age-h">Based on your age</div>
    <div class="grid">${cards.map(([v,k,o])=>`<div class="card" data-v="${v}"><div class="art">${img(k,F.body(Object.assign({fat:.25,crop:'bust'},o)))}</div><div class="bar">Age: ${v}<i>›</i></div></div>`).join('')}</div>
    <p class="legal">By choosing your age and continuing you agree to our <a href="${CONFIG.termsUrl}" target="_blank">Terms of Service</a> | <a href="${CONFIG.privacyUrl}" target="_blank">Privacy Policy</a><br>Please review before continuing</p>`;
-  el.querySelectorAll('.card').forEach(c=>c.onclick=()=>{ c.classList.add('sel'); D.a.age=c.dataset.v; setTimeout(next,220); });
+  el.querySelectorAll('.card').forEach(c=>c.onclick=()=>{ c.classList.add('sel'); D.a.age=c.dataset.v; if(!D.started){ D.started=true; window.fbq&&fbq('trackCustom','QuizStart'); } setTimeout(next,220); });
  },
  grid(sc, el){
   el.innerHTML = `<h1 class="q">${sc.q}</h1><div class="grid">${sc.opts.map(([v,l,art])=>`<div class="card" data-v="${v}"><div class="art${sc.pose?' pose':''}">${art()}</div><div class="bar${sc.plain?' plain':''}">${l}${sc.plain?'':'<i>›</i>'}</div></div>`).join('')}</div>`;
@@ -519,7 +511,7 @@ const R = {
  },
  name(sc, el){
   el.innerHTML = `<h1 class="q">What's your name?</h1><input class="field" id="nm" placeholder="Name" autocomplete="given-name" value="${esc(D.name||'')}">`;
-  const inp=$('#nm',el), b=cta('Continue',()=>{ D.name=inp.value.trim(); sendLead(); next(); },true);
+  const inp=$('#nm',el), b=cta('Continue',()=>{ D.name=inp.value.trim(); sendLead(); window.fbq&&fbq('track','Lead'); next(); },true);
   inp.oninput=()=>{ b.disabled=!inp.value.trim(); }; inp.oninput(); inp.focus();
  },
  ready(sc, el){
