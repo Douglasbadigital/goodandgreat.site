@@ -83,6 +83,29 @@ fbq('track','PageView');
   .safe{font-size:12px;color:var(--muted);margin-top:10px}
   .no-thanks{display:block;text-align:center;font-size:13px;color:var(--muted);margin:16px 0 0;text-decoration:underline}
 
+  /* ===== KIWIFY UPSELL: só estilo, código do Kiwify intacto ===== */
+  #kiwify-upsell-cgYfLC6{display:flex;flex-direction:column;align-items:stretch}
+  #kiwify-upsell-trigger-cgYfLC6{
+    order:1;display:block !important;width:100% !important;border:none !important;cursor:pointer;
+    background:var(--lilac) !important;color:#fff !important;
+    font-family:'Poppins',sans-serif !important;font-weight:700 !important;font-size:17px !important;
+    border-radius:40px !important;padding:17px 14px !important;letter-spacing:.3px;text-transform:uppercase;
+    box-shadow:none !important;animation:pulse 2s infinite;
+  }
+  #kiwify-upsell-trigger-cgYfLC6:hover{background:var(--lilac-dark) !important}
+  #kiwify-upsell-cgYfLC6::after{
+    order:2;content:"🔒 Charged to the same card. No need to re-enter your details.";
+    font-size:12px;color:var(--muted);margin-top:10px;
+  }
+  #kiwify-upsell-cancel-trigger-cgYfLC6{
+    order:3;cursor:pointer;font-family:'Poppins',sans-serif !important;
+    font-size:13px !important;color:var(--muted) !important;text-decoration:underline;
+    margin-top:16px;background:none !important;
+  }
+  /* banner de baixo: proxy dos gatilhos do Kiwify */
+  button.btn{border:none;cursor:pointer;font-family:'Poppins',sans-serif;text-transform:uppercase}
+  .no-thanks{cursor:pointer}
+
   /* garantia */
   .guarantee{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:13px}
   .seal{flex:none;width:64px;height:64px;border-radius:50%;background:var(--lilac);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;line-height:1}
@@ -162,11 +185,15 @@ fbq('track','PageView');
     <div class="price">[37.90]</div>
     <div class="once">One-time payment. No subscription.</div>
     <div class="timer">Offer expires in <b id="timer">10:00</b></div>
-    <!-- [LASTLINK: trocar href pelo link/script de upsell 1-clique] -->
-    <a class="btn" href="[LINK_UPSELL_LASTLINK]">YES, ADD TO MY PLAN</a>
-    <p class="safe">🔒 Charged to the same card. No need to re-enter your details.</p>
+
+<!-- botao kiwify-->
+<div id="kiwify-upsell-cgYfLC6" data-upsell-url="" data-downsell-url="https://goodandgreat.site/dn1" style="--kiwify-upsell-accept-bg:#2563eb;--kiwify-upsell-accept-color:#FFFFFF">
+          <button id="kiwify-upsell-trigger-cgYfLC6">Yes, I accept this special offer!</button>
+          <div id="kiwify-upsell-cancel-trigger-cgYfLC6">No, I would like to decline this offer.</div>
+        </div><script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
+<!-- fim botao kiwify-->
+
   </div>
-  <a class="no-thanks" href="downsell.html">No thanks, I'll keep my plan as it is</a>
 
   <!-- 7. Garantia -->
   <h2>Zero risk</h2>
@@ -183,20 +210,16 @@ fbq('track','PageView');
   <details><summary>I'm a beginner. Is it for me?</summary><p>Yes. The exercises are low-impact and the videos show every movement step by step.</p></details>
   <details><summary>Where will I find it?</summary><p>In the same members area as your 7-week program. You'll receive the access by email.</p></details>
 
+  <!-- Banner final: aciona os mesmos gatilhos do Kiwify acima (sem duplicar IDs) -->
   <div class="offer">
     <div class="price">[37.90]</div>
     <div class="once">One-time payment. No subscription.</div>
-    <a class="btn" href="[LINK_UPSELL_LASTLINK]">YES, ADD TO MY PLAN</a>
+    <button type="button" class="btn" id="proxy-accept">Yes, add to my plan</button>
+    <p class="safe">🔒 Charged to the same card. No need to re-enter your details.</p>
   </div>
-  <a class="no-thanks" href="downsell.html">No thanks, I'll keep my plan as it is</a>
+  <a class="no-thanks" id="proxy-decline">No thanks, I'll keep my plan as it is</a>
 
 
-<!-- botao kiwify-->
-<div id="kiwify-upsell-cgYfLC6" data-upsell-url="" data-downsell-url="https://goodandgreat.site/dn1" style="--kiwify-upsell-accept-bg:#2563eb;--kiwify-upsell-accept-color:#FFFFFF">
-          <button id="kiwify-upsell-trigger-cgYfLC6">Yes, I accept this special offer!</button>
-          <div id="kiwify-upsell-cancel-trigger-cgYfLC6">No, I would like to decline this offer.</div>
-        </div><script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
-<!-- fim botao kiwify-->
 
   
   <footer>
@@ -218,6 +241,14 @@ fbq('track','PageView');
     if(s<=0) return; s--;
     el.textContent = String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
   },1000);
+
+  // Banner final -> clica nos gatilhos originais do Kiwify
+  document.getElementById('proxy-accept').addEventListener('click',function(){
+    document.getElementById('kiwify-upsell-trigger-cgYfLC6').click();
+  });
+  document.getElementById('proxy-decline').addEventListener('click',function(){
+    document.getElementById('kiwify-upsell-cancel-trigger-cgYfLC6').click();
+  });
 </script>
 </body>
 </html>
