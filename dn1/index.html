@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Sculpt Pilates — Last Chance Offer</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- [META PIXEL / CLARITY: cole aqui os mesmos scripts do checkout.html] -->
+<style>
+  :root{
+    --lilac:#9b7fd4; --lilac-dark:#7b5fc0; --lilac-soft:#f1ecfb;
+    --pink:#f4b6c8; --pink-soft:#fdf0f4;
+    --ink:#2b2236; --muted:#6e6579; --line:#e7e1ef;
+    --green:#3bb273; --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:#faf8fd;line-height:1.5}
+  .wrap{max-width:520px;margin:0 auto;padding:0 16px}
+
+  /* topo */
+  .steps{display:flex;justify-content:space-between;gap:6px;padding:16px 0 8px;font-size:11px;color:var(--muted)}
+  .step{flex:1;text-align:center}
+  .step .bar{height:4px;border-radius:4px;background:var(--line);margin-bottom:6px}
+  .step.done .bar{background:var(--green)}
+  .step.active .bar{background:var(--lilac)}
+  .step.active{color:var(--lilac-dark);font-weight:600}
+  .alert{background:var(--pink-soft);border:1px solid var(--pink);border-radius:12px;padding:12px 14px;text-align:center;font-size:14px;margin:10px 0 18px}
+  .alert b{color:#c2557a}
+
+  h1{font-family:'Lora',serif;font-weight:600;font-size:27px;line-height:1.25;text-align:center;margin-bottom:10px}
+  h1 em{color:var(--lilac-dark);font-style:italic}
+  .sub{text-align:center;color:var(--muted);font-size:15px;margin-bottom:18px}
+  h2{font-family:'Lora',serif;font-weight:600;font-size:22px;text-align:center;margin:34px 0 14px}
+
+  .cover{width:100%;border-radius:16px;display:block;background:var(--lilac-soft);aspect-ratio:16/9;object-fit:cover}
+
+  /* áreas */
+  .zones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .zone{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+  .zone .ico{font-size:26px}
+  .zone b{display:block;font-size:15px;margin-top:4px}
+  .zone span{font-size:12px;color:var(--muted)}
+
+  /* lista */
+  .list{list-style:none;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:6px 16px}
+  .list li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .list li:last-child{border-bottom:none}
+  .check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--lilac);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+
+  /* comparação */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .col{border-radius:14px;padding:14px;font-size:13px}
+  .col.basic{background:var(--white);border:1px solid var(--line)}
+  .col.plus{background:var(--lilac-soft);border:2px solid var(--lilac)}
+  .col h3{font-size:14px;margin-bottom:8px}
+  .col p{padding:5px 0;border-top:1px solid var(--line)}
+  .col .no{color:#b9b1c4}
+
+  /* oferta */
+  .offer{background:var(--white);border:2px solid var(--lilac);border-radius:18px;padding:20px 18px;margin-top:30px;text-align:center;box-shadow:0 8px 24px rgba(123,95,192,.12)}
+  .tag{display:inline-block;background:var(--pink);color:#7a2346;font-size:12px;font-weight:600;border-radius:20px;padding:4px 12px;margin-bottom:10px}
+  .old{color:var(--muted);text-decoration:line-through;font-size:16px}
+  .price{font-size:40px;font-weight:700;color:var(--lilac-dark);line-height:1.1}
+  .once{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .timer{font-size:13px;margin-bottom:14px}
+  .timer b{color:#c2557a;font-variant-numeric:tabular-nums}
+  .btn{display:block;width:100%;background:var(--lilac);color:#fff;font-weight:700;font-size:17px;text-decoration:none;border-radius:40px;padding:17px 14px;letter-spacing:.3px;animation:pulse 2s infinite}
+  .btn:hover{background:var(--lilac-dark)}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+  .safe{font-size:12px;color:var(--muted);margin-top:10px}
+  .no-thanks{display:block;text-align:center;font-size:13px;color:var(--muted);margin:16px 0 0;text-decoration:underline}
+
+  /* ===== KIWIFY DOWNSELL: só estilo, código do Kiwify intacto ===== */
+  #kiwify-upsell-2huC7br{display:flex;flex-direction:column;align-items:stretch}
+  #kiwify-upsell-2huC7br input{display:none !important}
+  #kiwify-upsell-trigger-2huC7br{
+    order:1;display:block !important;width:100% !important;border:none !important;cursor:pointer;
+    background:var(--lilac) !important;color:#fff !important;
+    font-family:'Poppins',sans-serif !important;font-weight:700 !important;font-size:17px !important;
+    border-radius:40px !important;padding:17px 14px !important;letter-spacing:.3px;text-transform:uppercase;
+    box-shadow:none !important;animation:pulse 2s infinite;
+  }
+  #kiwify-upsell-trigger-2huC7br:hover{background:var(--lilac-dark) !important}
+  #kiwify-upsell-2huC7br::after{
+    order:2;content:"🔒 Charged to the same card. No need to re-enter your details.";
+    font-size:12px;color:var(--muted);margin-top:10px;
+  }
+  #kiwify-upsell-cancel-trigger-2huC7br{
+    order:3;cursor:pointer;font-family:'Poppins',sans-serif !important;
+    font-size:13px !important;color:var(--muted) !important;text-decoration:underline;
+    margin-top:16px;background:none !important;
+  }
+  /* banner de baixo: proxy dos gatilhos do Kiwify */
+  button.btn{border:none;cursor:pointer;font-family:'Poppins',sans-serif;text-transform:uppercase}
+  .no-thanks{cursor:pointer}
+
+  /* garantia */
+  .guarantee{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:13px}
+  .seal{flex:none;width:64px;height:64px;border-radius:50%;background:var(--lilac);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;line-height:1}
+  .seal small{font-size:9px;font-weight:500}
+
+  /* faq */
+  details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:8px;font-size:14px}
+  summary{font-weight:600;cursor:pointer;list-style:none}
+  summary::after{content:'+';float:right;color:var(--lilac)}
+  details[open] summary::after{content:'–'}
+  details p{margin-top:8px;color:var(--muted)}
+
+  footer{text-align:center;font-size:11px;color:var(--muted);padding:30px 0 40px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. Progresso -->
+  <div class="steps">
+    <div class="step done"><div class="bar"></div>Order placed</div>
+    <div class="step active"><div class="bar"></div>Customize plan</div>
+    <div class="step"><div class="bar"></div>Access</div>
+  </div>
+
+  <div class="alert"><b>Wait — before you go.</b><br>200 exercises might be more than you need right now.</div>
+
+  <!-- 2. Headline -->
+  <h1><span id="name">You</span>, just want to focus on your <em>glutes and abs</em>?</h1>
+  <p class="sub">Get <b>Home Sculpt Glutes &amp; Abs</b>: only the exercises for the two areas women want to sculpt most, for a fraction of the price.</p>
+
+  <img class="cover" src="glutes-abs.png" alt="Home Sculpt Glutes &amp; Abs">
+
+  <!-- 3. Áreas -->
+  <h2>Two zones. One goal.</h2>
+  <div class="zones">
+    <div class="zone"><div class="ico">🍑</div><b>Glutes</b><span>Lift and round your booty</span></div>
+    <div class="zone"><div class="ico">✨</div><b>Abs</b><span>Tighten your core</span></div>
+  </div>
+
+  <!-- 4. O que inclui -->
+  <h2>What's inside</h2>
+  <ul class="list">
+    <li><span class="check">✓</span><span><b>100 Pilates exercises</b> just for glutes and abs</span></li>
+    <li><span class="check">✓</span><span><b>Short guided video</b> for every exercise, so you always know exactly what to do</span></li>
+    <li><span class="check">✓</span><span><b>New exercises every week</b> until the library reaches 100</span></li>
+    <li><span class="check">✓</span><span><b>Works with your 7-week program</b>: add it on rest days or after your workout</span></li>
+    <li><span class="check">✓</span><span><b>No gym, no equipment</b>: just a mat and a small space at home</span></li>
+    <li><span class="check">✓</span><span><b>Same members area</b> as your program, no extra login</span></li>
+  </ul>
+
+  <!-- 5. Comparação -->
+  <h2>Your plan, upgraded</h2>
+  <div class="compare">
+    <div class="col basic">
+      <h3>Your current plan</h3>
+      <p>7-week program</p>
+      <p>Weekly workouts</p>
+      <p class="no">✕ Glute exercises</p>
+      <p class="no">✕ Ab exercises</p>
+    </div>
+    <div class="col plus">
+      <h3>+ Glutes &amp; Abs</h3>
+      <p>7-week program</p>
+      <p>Weekly workouts</p>
+      <p><b>✓ 100 glute &amp; ab exercises</b></p>
+      <p><b>✓ New videos every week</b></p>
+    </div>
+  </div>
+
+  <!-- 6. Oferta -->
+  <div class="offer" id="offer">
+    <span class="tag">LAST CHANCE · THIS PAGE WON'T APPEAR AGAIN</span>
+    <div class="old">[49.90]</div>
+    <div class="price">[$17.90]</div>
+    <div class="once">One-time payment. No subscription.</div>
+    <div class="timer">Offer expires in <b id="timer">10:00</b></div>
+
+<div id="kiwify-upsell-2huC7br" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#2563eb;--kiwify-upsell-accept-color:#FFFFFF">
+          <button id="kiwify-upsell-trigger-2huC7br">Yes, I accept this special offer!</button>
+          <div id="kiwify-upsell-cancel-trigger-2huC7br">No, I would like to decline this offer.</div>
+        </div><script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
+
+  </div>
+
+  <!-- 7. Garantia -->
+  <h2>Zero risk</h2>
+  <div class="guarantee">
+    <div class="seal">30<small>DAYS</small></div>
+    <p>Try Glutes &amp; Abs for 30 days. If you're not happy, contact us and we'll refund your purchase. No questions asked.</p>
+  </div>
+
+  <!-- 8. FAQ -->
+  <h2>Questions</h2>
+  <details><summary>Are all 100 exercises available right away?</summary><p>The library is growing: new exercises are added every week until it reaches 100. You get access to every new exercise as soon as it's released, at no extra cost.</p></details>
+  <details><summary>Is this a subscription?</summary><p>No. It's a one-time payment, separate from your plan.</p></details>
+  <details><summary>Do I need any equipment?</summary><p>No. All you need is a mat and a small space at home.</p></details>
+  <details><summary>I'm a beginner. Is it for me?</summary><p>Yes. The exercises are low-impact and the videos show every movement step by step.</p></details>
+  <details><summary>Where will I find it?</summary><p>In the same members area as your 7-week program. You'll receive the access by email.</p></details>
+
+  <!-- Banner final: aciona os mesmos gatilhos do Kiwify acima (sem duplicar IDs) -->
+  <div class="offer">
+    <div class="price">[$17.90]</div>
+    <div class="once">One-time payment. No subscription.</div>
+    <button type="button" class="btn" id="proxy-accept">Yes, add Glutes &amp; Abs</button>
+    <p class="safe">🔒 Charged to the same card. No need to re-enter your details.</p>
+  </div>
+  <a class="no-thanks" id="proxy-decline">No thanks, take me to my plan</a>
+
+  <footer>
+    Results vary from person to person and depend on consistency, diet and individual factors.<br>
+    © Home Sculpt Pilates
+  </footer>
+</div>
+
+<script>
+  // Nome vindo do quiz (?name=)
+  try{
+    var n = new URLSearchParams(location.search).get('name');
+    if(n){ n = n.trim().split(' ')[0]; document.getElementById('name').textContent = n.charAt(0).toUpperCase()+n.slice(1); }
+  }catch(e){}
+
+  // Timer de 10 min
+  var s = 600, el = document.getElementById('timer');
+  setInterval(function(){
+    if(s<=0) return; s--;
+    el.textContent = String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  },1000);
+
+  // Banner final -> clica nos gatilhos originais do Kiwify
+  document.getElementById('proxy-accept').addEventListener('click',function(){
+    document.getElementById('kiwify-upsell-trigger-2huC7br').click();
+  });
+  document.getElementById('proxy-decline').addEventListener('click',function(){
+    document.getElementById('kiwify-upsell-cancel-trigger-2huC7br').click();
+  });
+</script>
+</body>
+</html>
