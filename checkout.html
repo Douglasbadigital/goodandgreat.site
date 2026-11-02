@@ -84,8 +84,6 @@ h2{font-size:26px;font-weight:800;text-align:center;line-height:1.2;margin:40px 
 .plan-day s{font-size:11px;color:var(--muted);display:block}
 .plan-day b{font-size:22px;font-weight:800}
 .plan-day small{display:block;font-size:10px;color:var(--muted)}
-.disclaimer{font-size:11px;color:var(--muted);text-align:center;margin:14px 0}
-.disclaimer a{color:var(--pink)}
 
 /* Highlights */
 .hl{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
@@ -262,7 +260,6 @@ const CONFIG = {
   </div>
   <div class="plans"></div>
   <a class="btn cta" href="#">Get my plan</a>
-  <p class="disclaimer"></p>
 </template>
 
 <script>
@@ -326,9 +323,6 @@ const CONFIG = {
   function render(){
     document.querySelectorAll(".plan").forEach(el=>el.classList.toggle("active",el.dataset.id===selected.id));
     document.querySelectorAll(".cta").forEach(a=>a.href=buildUrl(selected.checkout));
-    document.querySelectorAll(".disclaimer").forEach(d=>{
-      d.innerHTML=`Without cancellation, before the selected discounted intro plan ends, I accept that ${CONFIG.brand} will automatically charge ${selected.renew} every 4 weeks until I cancel. You can cancel anytime. It's quick and easy.`;
-    });
   }
   render();
 
