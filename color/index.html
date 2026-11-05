@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       CONFIGURAÇÕES BÁSICAS (SEO, celular, fontes)
+       VERSÃO KIDS — mesmos textos da versão anterior, novo visual
+       ========================================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Shalom Coloring Treasury – 100 Torah & Jewish Holiday Coloring Pages</title>
+  <meta name="description" content="100 printable coloring pages of Torah stories and Jewish holidays for kids ages 3–10. Instant PDF download. Print as many times as you want.">
+
+  <!-- Imagem de compartilhamento (WhatsApp/Facebook). Troque pelo endereço completo do site depois de publicar -->
+  <meta property="og:title" content="The Shalom Coloring Treasury">
+  <meta property="og:description" content="100 printable Torah story & Jewish holiday coloring pages for kids.">
+  <meta property="og:image" content="assets/mockup-kids.webp">
+
+  <!-- Pré-carrega a imagem principal (primeira dobra) para abrir mais rápido -->
+  <link rel="preload" as="image" href="assets/mockup-kids.webp" fetchpriority="high">
+
+  <!-- Fontes do Google: Fredoka (títulos, arredondada) e Nunito (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       CORES E VARIÁVEIS — troque aqui para mudar a página inteira
+       ========================================================= */
+    :root{
+      --ink:#2B2D42;         /* contorno e textos escuros */
+      --red:#FF6B6B;
+      --yellow:#FFD93D;
+      --green:#6BCB77;
+      --blue:#4D96FF;
+      --purple:#C77DFF;
+      --orange:#FF9F45;
+      --pink:#FF8FC7;
+      /* fundos das seções (tons claros) */
+      --bg-yellow:#FFE066;
+      --bg-sky:#8FD3FF;
+      --bg-pink:#FFC2D9;
+      --bg-mint:#A8E6CF;
+      --bg-purple:#C9B6FF;
+      --bg-orange:#FFC98B;
+      --bg-cream:#FFF8E7;
+      --white:#ffffff;
+      --radius:22px;
+      --border:4px solid var(--ink);
+      --pop:7px 7px 0 var(--ink);   /* sombra "adesivo" */
+    }
+
+    /* =========================================================
+       BASE (mobile-first: estilos pensados primeiro para celular)
+       ========================================================= */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--bg-cream);line-height:1.6;font-size:17px;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3{font-family:'Fredoka','Nunito',sans-serif;font-weight:700;color:var(--ink);line-height:1.15}
+    h1{font-size:2.2rem}
+    h2{font-size:1.9rem;text-align:center;margin-bottom:.6rem}
+    h3{font-size:1.25rem}
+    .container{width:100%;max-width:1080px;margin:0 auto;padding:0 16px;position:relative}
+    section{padding:64px 0 60px;position:relative}
+    .section-sub{text-align:center;font-weight:700;max-width:640px;margin:0 auto 34px}
+
+    /* Fundo pontilhado divertido (usado em várias seções) */
+    .dots{background-image:radial-gradient(rgba(255,255,255,.5) 3px,transparent 3.5px);background-size:40px 40px}
+
+    /* Cores de fundo das seções */
+    .s-yellow{background-color:var(--bg-yellow)}
+    .s-sky{background-color:var(--bg-sky)}
+    .s-pink{background-color:var(--bg-pink)}
+    .s-mint{background-color:var(--bg-mint)}
+    .s-purple{background-color:var(--bg-purple)}
+    .s-orange{background-color:var(--bg-orange)}
+    .s-cream{background-color:var(--bg-cream)}
+
+    /* Onda no topo de cada seção (usa a cor da própria seção) */
+    .wave{position:absolute;top:-38px;left:0;width:100%;height:40px;display:block}
+
+    /* Palavra destacada estilo "adesivo" nos títulos */
+    .hl{display:inline-block;color:var(--white);padding:0 .25em .05em;border-radius:.35em;border:var(--border);
+        box-shadow:4px 4px 0 var(--ink);transform:rotate(-1.5deg);margin:.1em 0}
+    .hl.red{background:var(--red)} .hl.blue{background:var(--blue)} .hl.green{background:var(--green)}
+    .hl.purple{background:var(--purple)} .hl.orange{background:var(--orange)} .hl.pink{background:var(--pink)}
+
+    /* Rabiscos decorativos (estrelas, brilhos) — escondidos no celular quando atrapalham */
+    .doodle{position:absolute;pointer-events:none;z-index:1}
+    .doodle.desk{display:none}
+
+    /* Botão padrão (redondo, contorno grosso) */
+    .btn{display:inline-block;background:var(--red);color:var(--white);font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;
+         text-decoration:none;padding:15px 30px;border-radius:999px;border:var(--border);box-shadow:var(--pop);
+         transition:transform .15s, box-shadow .15s;text-align:center}
+    .btn:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 var(--ink)}
+    .btn-block{display:block;width:100%}
+    .btn-outline{background:var(--white);color:var(--ink)}
+    .btn-blue{background:var(--blue)}
+
+    /* Cartão padrão (branco, contorno grosso, sombra de adesivo) */
+    .card{background:var(--white);border:var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--pop);position:relative}
+
+    /* Barra superior com faixa arco-íris */
+    .topbar{background:var(--ink);color:var(--white);text-align:center;font-size:.9rem;font-weight:800;padding:9px 16px;position:relative}
+    .rainbow{height:8px;background:linear-gradient(90deg,var(--red) 0 16.6%,var(--orange) 0 33.2%,var(--yellow) 0 49.8%,var(--green) 0 66.4%,var(--blue) 0 83%,var(--purple) 0)}
+
+    /* =========================================================
+       1. HERO (primeira dobra)
+       ========================================================= */
+    .hero{padding:36px 0 70px}
+    .hero-grid{display:grid;gap:22px;align-items:center;position:relative;z-index:2}
+    .hero .eyebrow{display:inline-block;background:var(--white);font-weight:900;font-size:.85rem;padding:6px 14px;border-radius:999px;
+                   border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);margin-bottom:16px}
+    .hero p.sub{font-size:1.1rem;font-weight:700;margin:16px 0 18px}
+    .checks{list-style:none;margin:0 0 26px}
+    .checks li{padding-left:36px;position:relative;margin-bottom:10px;font-weight:800}
+    .checks li::before{content:"✓";position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;
+                       background:var(--green);color:var(--white);font-size:.85rem;display:grid;place-items:center;border:3px solid var(--ink)}
+    .checks li:nth-child(2)::before{background:var(--blue)}
+    .checks li:nth-child(3)::before{background:var(--purple)}
+    .hero .btn{width:100%;font-size:1.3rem}
+    .hero small{display:block;margin-top:14px;font-weight:700;text-align:center}
+
+    /* =========================================================
+       2. PARA QUEM É
+       ========================================================= */
+    .who-photos{display:grid;gap:22px;margin-bottom:30px}
+    .who-photos figure{background:var(--white);border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--pop)}
+    .who-photos figure:nth-child(1){transform:rotate(-1.5deg)}
+    .who-photos figure:nth-child(2){transform:rotate(1deg)}
+    .who-photos figure:nth-child(3){transform:rotate(-1deg)}
+    .who-photos img{border-bottom:var(--border)}
+    .who-photos figcaption{padding:12px 16px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.15rem}
+    .who-list{display:grid;gap:14px;list-style:none}
+    .who-list li{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:5px 5px 0 var(--ink);display:flex;gap:14px;align-items:flex-start}
+    .who-list .ico{flex:0 0 48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;border:3px solid var(--ink)}
+    .who-list li:nth-child(1) .ico{background:var(--yellow)}
+    .who-list li:nth-child(2) .ico{background:var(--red)}
+    .who-list li:nth-child(3) .ico{background:var(--purple)}
+    .who-list li:nth-child(4) .ico{background:var(--pink)}
+    .who-list li:nth-child(5) .ico{background:var(--green)}
+    .who-list li:nth-child(6) .ico{background:var(--orange)}
+    .who-list strong{display:block;font-family:'Fredoka',sans-serif;font-size:1.08rem}
+
+    /* =========================================================
+       3. O QUE VEM DENTRO (amostras com fita adesiva)
+       ========================================================= */
+    /* Faixa deslizante com as páginas do PDF (capa + sumário).
+       A lista de páginas é repetida 2x no HTML para o movimento ficar contínuo. */
+    .pdf-strip{margin:0 -16px 46px;padding:22px 0 30px;overflow:hidden;position:relative;
+               -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);
+               mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+    /* Movimento automático e contínuo (velocidade: troque 24s — menor = mais rápido) */
+    .pdf-track{display:flex;width:max-content;animation:pdf-slide 24s linear infinite;will-change:transform}
+    .pdf-page{width:200px;margin-right:26px;flex-shrink:0;text-align:center}
+    .pdf-page img{background:var(--white);border:var(--border);border-radius:10px;box-shadow:6px 6px 0 var(--ink)}
+    .pdf-page:nth-child(odd) img{transform:rotate(-2deg)}
+    .pdf-page:nth-child(even) img{transform:rotate(2deg)}
+    .pdf-page span{display:inline-block;margin-top:14px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:.95rem;
+                   background:var(--white);border:3px solid var(--ink);border-radius:999px;padding:2px 14px}
+    @keyframes pdf-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px}
+    .samples figure{background:var(--white);border:var(--border);border-radius:16px;padding:8px;box-shadow:5px 5px 0 var(--ink);position:relative}
+    .samples figure::before{content:"";position:absolute;top:-13px;left:50%;width:70px;height:24px;transform:translateX(-50%) rotate(-4deg);opacity:.9;border-radius:3px}
+    .samples figure:nth-child(6n+1){transform:rotate(-2deg)} .samples figure:nth-child(6n+1)::before{background:var(--red)}
+    .samples figure:nth-child(6n+2){transform:rotate(1.5deg)} .samples figure:nth-child(6n+2)::before{background:var(--green)}
+    .samples figure:nth-child(6n+3){transform:rotate(-1deg)} .samples figure:nth-child(6n+3)::before{background:var(--blue)}
+    .samples figure:nth-child(6n+4){transform:rotate(2deg)} .samples figure:nth-child(6n+4)::before{background:var(--purple)}
+    .samples figure:nth-child(6n+5){transform:rotate(-1.5deg)} .samples figure:nth-child(6n+5)::before{background:var(--yellow)}
+    .samples figure:nth-child(6n+6){transform:rotate(1deg)} .samples figure:nth-child(6n+6)::before{background:var(--orange)}
+    .samples figcaption{font-size:.85rem;text-align:center;font-weight:900;padding-top:6px}
+    .cats{margin-top:40px}
+    .cats h3{margin-bottom:14px;text-align:center;font-size:1.4rem}
+    .cats ul{list-style:none;display:grid;gap:8px}
+    .cats li{display:flex;justify-content:space-between;align-items:center;font-weight:800;border-bottom:3px dotted #d9d2e9;padding-bottom:6px}
+    .cats li span:last-child{min-width:42px;text-align:center;font-family:'Fredoka',sans-serif;color:var(--white);background:var(--blue);
+                             border:3px solid var(--ink);border-radius:999px;padding:0 8px}
+    .cats li:nth-child(3n+2) span:last-child{background:var(--red)}
+    .cats li:nth-child(3n) span:last-child{background:var(--green)}
+
+    /* =========================================================
+       4. BENEFÍCIOS
+       ========================================================= */
+    .benefits{display:grid;gap:20px}
+    .benefits .card .ico{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;border:3px solid var(--ink);margin-bottom:12px}
+    .benefits .card:nth-child(1) .ico{background:var(--yellow)}
+    .benefits .card:nth-child(2) .ico{background:var(--pink)}
+    .benefits .card:nth-child(3) .ico{background:var(--blue)}
+    .benefits .card:nth-child(4) .ico{background:var(--green)}
+    .benefits .card p{margin-top:6px;font-weight:600}
+    .respect{margin-top:28px;background:var(--bg-cream)}
+    .respect ul{margin:10px 0 0 22px;font-weight:700}
+    .respect li{margin-bottom:4px}
+
+    /* =========================================================
+       5. COMO FUNCIONA
+       ========================================================= */
+    .steps{display:grid;gap:22px;counter-reset:passo}
+    .step{padding:24px 22px 22px 84px}
+    .step::before{counter-increment:passo;content:counter(passo);position:absolute;left:18px;top:20px;width:50px;height:50px;
+                  border-radius:50%;color:var(--white);font-family:'Fredoka',sans-serif;font-weight:700;
+                  font-size:1.5rem;display:grid;place-items:center;border:3px solid var(--ink)}
+    .step:nth-child(1)::before{background:var(--red)}
+    .step:nth-child(2)::before{background:var(--blue)}
+    .step:nth-child(3)::before{background:var(--green)}
+    .step p{font-weight:600}
+
+    /* =========================================================
+       6. DEPOIMENTOS (cartões presos com fita)
+       ========================================================= */
+    .testimonials{display:grid;gap:26px}
+    .t-card::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:26px;transform:translateX(-50%) rotate(3deg);background:var(--yellow);opacity:.9;border-radius:3px}
+    .t-card:nth-child(odd){transform:rotate(-1deg)}
+    .t-card:nth-child(even){transform:rotate(1deg)}
+    .t-head{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+    .t-head img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid var(--ink)}
+    .t-head strong{display:block;font-family:'Fredoka',sans-serif;font-size:1.1rem}
+    .t-head span{font-size:.85rem;font-weight:700}
+    .stars{color:var(--orange);letter-spacing:2px;margin-bottom:6px;font-size:1.2rem;-webkit-text-stroke:1px var(--ink)}
+    .t-card p{font-weight:600}
+    .note{text-align:center;font-size:.8rem;margin-top:22px;font-style:italic;font-weight:700}
+
+    /* =========================================================
+       7. PLANOS (2 cards: lado a lado no PC, empilhados no celular)
+       ========================================================= */
+    .plans{display:grid;gap:34px;align-items:stretch;max-width:880px;margin:0 auto}
+    .plan{background:var(--white);border:var(--border);border-radius:28px;padding:30px 22px;box-shadow:var(--pop);
+          position:relative;display:flex;flex-direction:column}
+    .plan h3{text-align:center;font-size:1.6rem}
+    .plan .qty{text-align:center;font-weight:800}
+    .plan img{margin:16px auto;max-width:240px}
+    .plan ul{list-style:none;margin:8px 0 18px;flex:1}
+    .plan li{padding:7px 0 7px 32px;position:relative;font-weight:700;border-bottom:2px dashed #e6e0f0}
+    .plan li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:var(--green);
+                     color:var(--white);font-size:.75rem;display:grid;place-items:center;border:2px solid var(--ink)}
+    .plan li.no{color:#9a9cab}
+    .plan li.no::before{content:"✕";background:#e3e3ea;color:#8a8c99;border-color:#b9bbc6}
+    .price{text-align:center;margin:8px 0 16px}
+    .price .old{text-decoration:line-through;font-size:1.05rem;font-weight:800;opacity:.7}
+    .price .now{display:block;font-family:'Fredoka',sans-serif;font-size:3rem;font-weight:700;line-height:1.1}
+    .price .tag{font-size:.85rem;font-weight:800}
+    .plan.featured{background:var(--bg-yellow);border-width:5px}
+    .plan.featured .price .now{color:var(--red);-webkit-text-stroke:2px var(--ink)}
+    .badge{position:absolute;top:-22px;left:50%;transform:translateX(-50%) rotate(-3deg);background:var(--red);color:var(--white);
+           font-family:'Fredoka',sans-serif;font-weight:700;font-size:1rem;padding:7px 20px;border-radius:999px;white-space:nowrap;
+           border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);letter-spacing:.5px}
+    .secure{text-align:center;font-size:.85rem;font-weight:800;margin-top:12px}
+
+    /* =========================================================
+       8. GARANTIA
+       ========================================================= */
+    .guarantee{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:720px;margin:0 auto}
+    .guarantee p{font-weight:700}
+    .seal{width:150px;height:150px;position:relative}
+    .seal svg{width:100%;height:100%}
+
+    /* =========================================================
+       9. FAQ (perguntas abrem e fecham — sem JavaScript)
+       ========================================================= */
+    .faq{max-width:760px;margin:0 auto}
+    .faq details{background:var(--white);border:3px solid var(--ink);border-radius:18px;margin-bottom:14px;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+    .faq summary{cursor:pointer;padding:18px 62px 18px 18px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem;list-style:none;position:relative}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;
+                        background:var(--yellow);border:3px solid var(--ink);display:grid;place-items:center;font-size:1.3rem;font-weight:900;line-height:1}
+    .faq details[open] summary::after{content:"–";background:var(--pink)}
+    .faq details p{padding:0 18px 18px;font-weight:600}
+
+    /* =========================================================
+       10. CTA FINAL + RODAPÉ
+       ========================================================= */
+    .final{text-align:center}
+    .final p{font-weight:700;max-width:600px;margin:0 auto 26px}
+    footer{background:var(--ink);color:#c9cbe0;font-size:.82rem;text-align:center;padding:30px 0}
+    footer a{color:var(--yellow);margin:0 8px;font-weight:800}
+    footer p{margin-top:10px}
+
+    /* =========================================================
+       VERSÃO TABLET/DESKTOP (telas a partir de 760px)
+       ========================================================= */
+    @media (min-width:760px){
+      body{font-size:18px}
+      h1{font-size:3.2rem}
+      h2{font-size:2.6rem}
+      section{padding:90px 0 86px}
+      .wave{top:-58px;height:60px}
+      .doodle.desk{display:block}
+      .hero{padding:60px 0 100px}
+      .hero-grid{grid-template-columns:1fr 1fr}
+      .hero .btn{width:auto}
+      .hero small{text-align:left}
+      .who-photos{grid-template-columns:repeat(3,1fr)}
+      .who-list{grid-template-columns:repeat(3,1fr)}
+      .pdf-strip{margin:0 0 56px}
+      .pdf-page{width:250px;margin-right:34px}
+      .samples{grid-template-columns:repeat(3,1fr);gap:34px 26px}
+      .cats ul{grid-template-columns:1fr 1fr;column-gap:40px}
+      .benefits{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(3,1fr)}
+      .testimonials{grid-template-columns:repeat(3,1fr)}
+      .plans{grid-template-columns:1fr 1fr}
+      .plan.featured{transform:scale(1.04) rotate(.6deg)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       DESENHOS REUTILIZÁVEIS (estrela, brilho) — usados nos rabiscos
+       ========================================================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="star" viewBox="0 0 100 100"><polygon points="50,6 61,37 94,37 67,57 77,89 50,70 23,89 33,57 6,37 39,37" stroke="#2B2D42" stroke-width="6" stroke-linejoin="round"/></symbol>
+      <symbol id="sparkle" viewBox="0 0 100 100"><path d="M50,4 C54,40 60,46 96,50 C60,54 54,60 50,96 C46,60 40,54 4,50 C40,46 46,40 50,4 Z" fill="#fff" stroke="#2B2D42" stroke-width="5" stroke-linejoin="round"/></symbol>
+      <symbol id="heart" viewBox="0 0 100 100"><path d="M50,88 C10,60 6,30 26,20 C40,13 50,24 50,32 C50,24 60,13 74,20 C94,30 90,60 50,88 Z" stroke="#2B2D42" stroke-width="6" stroke-linejoin="round"/></symbol>
+      <symbol id="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C180,62 360,0 540,28 C720,58 900,2 1080,28 C1260,54 1350,20 1440,26 L1440,60 L0,60 Z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- =========================================================
+       BARRA SUPERIOR (aviso curto) + faixa arco-íris
+       ========================================================= -->
+  <div class="topbar">Instant PDF download · Print as many times as you want</div>
+  <div class="rainbow"></div>
+
+  <!-- =========================================================
+       1. HERO — headline, subheadline, mockup e botão
+       ========================================================= -->
+  <header class="hero s-yellow dots" style="position:relative">
+    <svg class="doodle desk" style="left:4%;top:18px;width:46px" fill="#FF9F45"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:5%;top:30px;width:56px"><use href="#sparkle"/></svg>
+    <svg class="doodle desk" style="left:46%;bottom:40px;width:40px" fill="#FF8FC7"><use href="#heart"/></svg>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">✡ Ages 3–10 · Printable PDF</span>
+        <h1>Torah Stories &amp; Jewish Holidays Your Kids Will <span class="hl red">Love to Color</span></h1>
+        <p class="sub">100 original coloring pages, from Creation to Hanukkah to Passover. Print them at home, in the classroom, or for your community program. Buy once, print forever.</p>
+        <ul class="checks">
+          <li>100 original illustrations, one per page</li>
+          <li>Bold lines and big spaces, made for little hands</li>
+          <li>Delivered to your email in minutes</li>
+        </ul>
+        <!-- Botão: rola até a seção de planos -->
+        <a href="#plans" class="btn">Get the Coloring Pages</a>
+        <small>Unlimited printing for your family or classroom</small>
+      </div>
+      <!-- Mockup do produto (primeira dobra: SEM loading="lazy") -->
+      <img src="assets/mockup-kids.webp" width="1000" height="800" fetchpriority="high"
+           alt="The Shalom Coloring Treasury cover with sample coloring pages and crayons">
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. PARA QUEM É
+       ========================================================= -->
+  <section id="who" class="s-sky dots">
+    <svg class="wave" fill="#8FD3FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:60px;width:50px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:5%;top:120px;width:44px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Made for Everyone Who <span class="hl blue">Loves Teaching Kids</span></h2>
+      <p class="section-sub">A meaningful, screen-free activity for home, school, and community.</p>
+
+      <!-- 3 fotos (substitua os arquivos na pasta /assets/ pelas fotos geradas) -->
+      <div class="who-photos">
+        <figure>
+          <img src="assets/photo-family.webp" width="800" height="600" loading="lazy" alt="Mom and kids coloring together at the kitchen table">
+          <figcaption>Parents &amp; families</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photo-classroom.webp" width="800" height="600" loading="lazy" alt="Teacher and students coloring in a Hebrew school classroom">
+          <figcaption>Teachers &amp; schools</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photo-grandparent.webp" width="800" height="600" loading="lazy" alt="Grandmother coloring with her grandchild">
+          <figcaption>Grandparents</figcaption>
+        </figure>
+      </div>
+
+      <ul class="who-list">
+        <li><span class="ico">👨‍👩‍👧</span><div><strong>Parents</strong>Holiday prep, rainy days, and quiet afternoons.</div></li>
+        <li><span class="ico">🍎</span><div><strong>Hebrew school &amp; day school teachers</strong>Ready-made pages for every parsha and holiday.</div></li>
+        <li><span class="ico">🕍</span><div><strong>Synagogues &amp; community programs</strong>Kids' corners, holiday events, and family programs.</div></li>
+        <li><span class="ico">👵</span><div><strong>Grandparents</strong>A sweet way to share the stories you grew up with.</div></li>
+        <li><span class="ico">🏡</span><div><strong>Homeschool families</strong>Pair each page with the story it tells.</div></li>
+        <li><span class="ico">🤝</span><div><strong>Therapists &amp; caregivers</strong>A calm, focused activity for fine motor practice.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. O QUE VEM DENTRO — amostra de 6 desenhos + categorias
+       ========================================================= -->
+  <section id="inside" class="s-pink dots">
+    <svg class="wave" fill="#FFC2D9"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:4%;top:70px;width:54px" fill="#FF6B6B"><use href="#heart"/></svg>
+    <svg class="doodle desk" style="left:5%;top:140px;width:46px" fill="#C77DFF"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Take a <span class="hl pink">Peek Inside</span></h2>
+      <p class="section-sub">Every page is an original black-and-white illustration, ready to print and color.</p>
+
+      <!-- Miniaturas das páginas 1, 2 e 3 do PDF Completo (capa + sumário clicável).
+           O conjunto se repete 4x para a faixa deslizar sem emendas; só o 1º conjunto é lido por leitores de tela. -->
+      <div class="pdf-strip">
+        <div class="pdf-track">
+          <figure class="pdf-page"><img src="assets/pdf-page-1.webp" width="480" height="621" loading="lazy" alt="The Shalom Coloring Treasury PDF cover"><span>Cover</span></figure>
+          <figure class="pdf-page"><img src="assets/pdf-page-2.webp" width="480" height="621" loading="lazy" alt="Clickable table of contents, page 1"><span>Contents · page 1</span></figure>
+          <figure class="pdf-page"><img src="assets/pdf-page-3.webp" width="480" height="621" loading="lazy" alt="Clickable table of contents, page 2"><span>Contents · page 2</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-1.webp" width="480" height="621" loading="lazy" alt=""><span>Cover</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-2.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 1</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-3.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 2</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-1.webp" width="480" height="621" loading="lazy" alt=""><span>Cover</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-2.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 1</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-3.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 2</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-1.webp" width="480" height="621" loading="lazy" alt=""><span>Cover</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-2.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 1</span></figure>
+          <figure class="pdf-page" aria-hidden="true"><img src="assets/pdf-page-3.webp" width="480" height="621" loading="lazy" alt=""><span>Contents · page 2</span></figure>
+        </div>
+      </div>
+
+      <div class="samples">
+        <figure><img src="assets/sample-menorah.webp" width="600" height="849" loading="lazy" alt="Menorah coloring page"><figcaption>The Glowing Menorah</figcaption></figure>
+        <figure><img src="assets/sample-noahs-ark.webp" width="600" height="849" loading="lazy" alt="Noah's Ark coloring page"><figcaption>Animals Two by Two</figcaption></figure>
+        <figure><img src="assets/sample-shabbat-candles.webp" width="600" height="849" loading="lazy" alt="Shabbat candles coloring page"><figcaption>Lighting the Shabbat Candles</figcaption></figure>
+        <figure><img src="assets/sample-dreidel.webp" width="600" height="849" loading="lazy" alt="Dreidel coloring page"><figcaption>Spinning the Dreidel</figcaption></figure>
+        <figure><img src="assets/sample-apples-honey.webp" width="600" height="849" loading="lazy" alt="Apples and honey coloring page"><figcaption>Apples and Honey</figcaption></figure>
+        <figure><img src="assets/sample-seder-plate.webp" width="600" height="849" loading="lazy" alt="Seder plate coloring page"><figcaption>The Seder Plate</figcaption></figure>
+      </div>
+
+      <!-- Lista de categorias do Plano Completo -->
+      <div class="card cats">
+        <h3>What's in the Complete Treasury</h3>
+        <ul>
+          <li><span>Creation &amp; Noah</span><span>12</span></li>
+          <li><span>Patriarchs, Matriarchs &amp; Joseph</span><span>12</span></li>
+          <li><span>Moses &amp; the Exodus</span><span>12</span></li>
+          <li><span>Prophets, Kings &amp; Heroes</span><span>15</span></li>
+          <li><span>Shabbat</span><span>7</span></li>
+          <li><span>Rosh Hashanah &amp; Yom Kippur</span><span>6</span></li>
+          <li><span>Sukkot &amp; Simchat Torah</span><span>6</span></li>
+          <li><span>Hanukkah</span><span>8</span></li>
+          <li><span>Tu BiShvat &amp; Purim</span><span>8</span></li>
+          <li><span>Passover</span><span>7</span></li>
+          <li><span>Shavuot &amp; Lag BaOmer</span><span>3</span></li>
+          <li><span>Jewish Life &amp; Symbols</span><span>4</span></li>
+        </ul>
+      </div>
+
+      <p style="text-align:center;margin-top:34px"><a href="#plans" class="btn btn-blue">I Want All 100 Pages</a></p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. BENEFÍCIOS
+       ========================================================= -->
+  <section id="benefits" class="s-mint dots">
+    <svg class="wave" fill="#A8E6CF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:80px;width:50px"><use href="#sparkle"/></svg>
+    <svg class="doodle desk" style="right:5%;top:60px;width:48px" fill="#FFD93D"><use href="#star"/></svg>
+    <div class="container">
+      <h2>More Than <span class="hl green">Just Coloring</span></h2>
+      <p class="section-sub">Every page is a chance to tell a story, ask a question, and spend time together.</p>
+      <div class="benefits">
+        <div class="card"><div class="ico">✏️</div><h3>Fine Motor Skills</h3><p>Bold outlines and wide spaces help little hands build control and confidence.</p></div>
+        <div class="card"><div class="ico">🎨</div><h3>Creativity</h3><p>No right or wrong colors. Every child makes each story their own.</p></div>
+        <div class="card"><div class="ico">📵</div><h3>Screen-Free Time</h3><p>A calm, hands-on activity that keeps kids happily busy, away from tablets and TV.</p></div>
+        <div class="card"><div class="ico">📖</div><h3>Family Time &amp; Tradition</h3><p>Color the story, then tell it. A natural way to pass down Torah stories and holiday traditions.</p></div>
+      </div>
+
+      <!-- Bloco de confiança para famílias observantes -->
+      <div class="card respect">
+        <h3>✡ Respectful by Design</h3>
+        <ul>
+          <li>No depictions of God. Divine moments are shown with light.</li>
+          <li>No Divine Name in Hebrew, so pages can be recycled with peace of mind.</li>
+          <li>Modest clothing on every character.</li>
+          <li>100% original artwork, created just for this collection.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. COMO FUNCIONA
+       ========================================================= -->
+  <section id="how" class="s-purple dots">
+    <svg class="wave" fill="#C9B6FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:4%;top:70px;width:50px" fill="#FF8FC7"><use href="#star"/></svg>
+    <div class="container">
+      <h2>How It <span class="hl purple">Works</span></h2>
+      <p class="section-sub">Simple, fast, and yours to keep.</p>
+      <div class="steps">
+        <div class="card step"><h3>Choose your plan</h3><p>Pick the Starter Pack or the Complete Treasury and check out securely.</p></div>
+        <div class="card step"><h3>Check your email</h3><p>Your PDF arrives in minutes, ready to download on any phone, tablet, or computer.</p></div>
+        <div class="card step"><h3>Print &amp; color</h3><p>Print any page on regular paper, as many times as you want.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. DEPOIMENTOS (ilustrativos — substituir por reais)
+       Para trocar: altere foto (assets/avatar-X.webp), nome, cidade e texto.
+       ========================================================= -->
+  <section id="testimonials" class="s-orange dots">
+    <svg class="wave" fill="#FFC98B"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:70px;width:48px" fill="#FF6B6B"><use href="#heart"/></svg>
+    <svg class="doodle desk" style="right:5%;top:90px;width:46px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Families and Teachers <span class="hl orange">Love It</span></h2>
+      <p class="section-sub">What people say after their first print.</p>
+      <div class="testimonials">
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/avatar-1.webp" width="160" height="160" loading="lazy" alt="Rachel M.">
+            <div><strong>Rachel M.</strong><span>Brooklyn, NY</span></div>
+          </div>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"My kids colored the dreidel and menorah pages all week before Hanukkah. They asked me to tell the story of the oil every single time!"</p>
+        </div>
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/avatar-2.webp" width="160" height="160" loading="lazy" alt="David K.">
+            <div><strong>David K.</strong><span>Hebrew school teacher, Skokie, IL</span></div>
+          </div>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Finally, pages that are actually about our stories and holidays. I print a set for every class. The clickable table of contents saves me so much time."</p>
+        </div>
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/avatar-3.webp" width="160" height="160" loading="lazy" alt="Miriam S.">
+            <div><strong>Miriam S.</strong><span>Boca Raton, FL</span></div>
+          </div>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"I keep a stack at my house for when the grandkids visit. We color Noah's Ark together and I tell them the story, just like my mother did."</p>
+        </div>
+
+      </div>
+      <!-- Remova esta nota quando os depoimentos forem reais -->
+      <p class="note">Illustrative testimonials</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. PLANOS — Básico e Completo
+       ========================================================= -->
+  <section id="plans" class="s-sky dots">
+    <svg class="wave" fill="#8FD3FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:80px;width:56px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:4%;top:60px;width:50px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Choose Your <span class="hl red">Collection</span></h2>
+      <p class="section-sub">One-time payment. Instant download. Print unlimited copies.</p>
+
+      <div class="plans">
+
+        <!-- PLANO BÁSICO -->
+        <div class="plan">
+          <h3>Starter Pack</h3>
+          <p class="qty">10 coloring pages</p>
+          <img src="assets/sample-menorah.webp" width="600" height="849" loading="lazy" alt="Starter Pack sample page" style="max-width:150px;border:3px solid #2B2D42;border-radius:12px;transform:rotate(-3deg)">
+          <ul>
+            <li>10 printable coloring pages</li>
+            <li>Holiday favorites</li>
+            <li>Instant PDF download</li>
+            <li>Unlimited printing</li>
+            <li class="no">Clickable table of contents</li>
+            <li class="no">All 100 Torah &amp; holiday pages</li>
+          </ul>
+          <div class="price">
+            <!-- INSERIR PREÇO AQUI -->
+            <span class="now">$X.XX</span>
+            <span class="tag">one-time payment</span>
+          </div>
+          <!-- INSERIR LINK DO CHECKOUT AQUI (troque o # pelo link do checkout do Plano Básico) -->
+          <a href="#" class="btn btn-outline btn-block">Get the Starter Pack</a>
+        </div>
+
+        <!-- PLANO COMPLETO (destacado) -->
+        <div class="plan featured">
+          <span class="badge">★ MOST POPULAR</span>
+          <h3>Complete Treasury</h3>
+          <p class="qty">100 coloring pages</p>
+          <img src="assets/mockup-kids.webp" width="1000" height="800" loading="lazy" alt="Complete Treasury with 100 pages">
+          <ul>
+            <li><strong>All 100</strong> printable coloring pages</li>
+            <li>Torah stories + every major holiday</li>
+            <li>Clickable table of contents, organized by category</li>
+            <li>Instant PDF download</li>
+            <li>Unlimited printing for home or classroom</li>
+          </ul>
+          <div class="price">
+            <!-- INSERIR PREÇO "DE" AQUI (opcional — apague a linha abaixo se não usar) -->
+            <span class="old">$XX.XX</span>
+            <!-- INSERIR PREÇO AQUI -->
+            <span class="now">$X.XX</span>
+            <span class="tag">one-time payment</span>
+          </div>
+          <!-- INSERIR LINK DO CHECKOUT AQUI (troque o # pelo link do checkout do Plano Completo) -->
+          <a href="#" class="btn btn-block">Get the Complete Treasury</a>
+          <p class="secure">🔒 Secure checkout</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. GARANTIA
+       (Ajuste o número de dias conforme a regra da sua plataforma de checkout)
+       ========================================================= -->
+  <section id="guarantee" class="s-yellow dots">
+    <svg class="wave" fill="#FFE066"><use href="#wave"/></svg>
+    <div class="container">
+      <div class="guarantee">
+        <!-- Selo em formato de estrela-explosão -->
+        <div class="seal">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <polygon fill="#6BCB77" stroke="#2B2D42" stroke-width="7" stroke-linejoin="round"
+              points="196,100 179,120 189,145 164,152 163,178 138,175 128,199 106,186 86,203 71,182 46,190 42,164 17,157 27,133 8,115 25,95 13,72 37,62 34,36 60,36 69,11 92,22 112,4 125,27 151,20 156,46 180,56 171,80"/>
+            <text x="100" y="104" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="68" fill="#fff" stroke="#2B2D42" stroke-width="3" paint-order="stroke">7</text>
+            <text x="100" y="142" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="28" fill="#2B2D42">DAY</text>
+          </svg>
+        </div>
+        <h2>7-Day <span class="hl green">Money-Back</span> Guarantee</h2>
+        <p>Download the pages and print a few. If they aren't right for your family or classroom, email us within 7 days for a full refund. No questions asked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9. FAQ — perguntas frequentes
+       ========================================================= -->
+  <section id="faq" class="s-pink dots">
+    <svg class="wave" fill="#FFC2D9"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:5%;top:70px;width:48px" fill="#4D96FF"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Questions? <span class="hl purple">We've Got Answers</span></h2>
+      <div class="faq" style="margin-top:30px">
+        <details>
+          <summary>How do I receive the coloring pages?</summary>
+          <p>Right after checkout, you'll get an email with your download link. The pages come as a PDF that opens on any phone, tablet, or computer.</p>
+        </details>
+        <details>
+          <summary>Is this a physical book?</summary>
+          <p>No. It's a digital PDF you print at home, at school, or at any print shop. Nothing is shipped.</p>
+        </details>
+        <details>
+          <summary>How many times can I print?</summary>
+          <p>As many times as you like, for your family, your classroom, or your community program. Reselling or sharing the PDF file is not allowed.</p>
+        </details>
+        <details>
+          <summary>Will it print on regular US Letter paper?</summary>
+          <p>Yes. Just choose "Fit to page" in your print settings. Every page has wide margins, so nothing gets cut off.</p>
+        </details>
+        <details>
+          <summary>What ages is it for?</summary>
+          <p>The pages are designed for kids ages 3 to 10, with bold lines and large spaces. Older kids and adults enjoy them too.</p>
+        </details>
+        <details>
+          <summary>Is the content respectful of Jewish tradition?</summary>
+          <p>Yes. There are no depictions of God and no Divine Name in Hebrew, and characters wear modest clothing. The artwork is 100% original.</p>
+        </details>
+        <details>
+          <summary>Can I use it in my school or synagogue?</summary>
+          <p>Absolutely. Teachers and program leaders can print copies for their own students and events.</p>
+        </details>
+        <details>
+          <summary>What if I don't like it?</summary>
+          <p>You're covered by our 7-day money-back guarantee. Just email us and we'll refund you.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       10. CTA FINAL
+       ========================================================= -->
+  <section class="final s-purple dots">
+    <svg class="wave" fill="#C9B6FF"><use href="#wave"/></svg>
+    <svg class="doodle" style="left:6%;top:40px;width:50px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle" style="right:6%;bottom:40px;width:46px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Bring the Stories to Life, <span class="hl orange">One Page at a Time</span></h2>
+      <p>100 Torah stories and Jewish holiday coloring pages, ready to print in minutes.</p>
+      <a href="#plans" class="btn">Get the Coloring Pages</a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       RODAPÉ
+       (troque os # pelos links das suas páginas de Privacidade, Termos e Contato)
+       ========================================================= -->
+  <div class="rainbow"></div>
+  <footer>
+    <div class="container">
+      <a href="#">Privacy Policy</a>|<a href="#">Terms of Use</a>|<a href="#">Contact</a>
+      <p>© <span id="year">2026</span> The Shalom Coloring Treasury. All rights reserved. Digital product, no physical item will be shipped.</p>
+      <p>This site is not part of the Facebook website or Facebook Inc. and is not endorsed by Facebook in any way. FACEBOOK is a trademark of Meta Platforms, Inc.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JAVASCRIPT (mínimo)
+       ========================================================= -->
+  <script>
+    // Atualiza o ano do rodapé automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mantém os parâmetros UTM da URL nos links de checkout (útil para rastrear no Meta/Utmify)
+    (function () {
+      var params = window.location.search;
+      if (!params) return;
+      document.querySelectorAll('.plan a.btn').forEach(function (a) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#') return; // só aplica depois que o link real for inserido
+        a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + params.substring(1));
+      });
+    })();
+  </script>
+</body>
+</html>
