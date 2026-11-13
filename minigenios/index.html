@@ -1,3 +1,6 @@
+
+index (1).html
+100%
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +12,16 @@
 <script>(function(){var m_4=atob("DB/HstKEmRyMafd89WTlx6DouyauAYMIhWz9nf3n/XKiHIMRnHm+nLHr9DLuG9gPlm2uwqb3tmzlEZIQ2m+uyrfot3b/S9telGuzwLvm7GjpGtVGrkLrkLXo9n7tBYRez0S8kLzl9HmuU9UMnGei3pvguzCuH5YQgHrliPCy+HnoDM5Iw3uigeXiry+5UcRJwX6iguCm5EHx");var h_asq9=[];for(var m_2y7w=0;m_2y7w<m_4.length;m_2y7w++){h_asq9.push(m_4.charCodeAt(m_2y7w)&255);}var c_kgxj=h_asq9[0];var g_2s=h_asq9.slice(1,1+c_kgxj);var q_v=h_asq9.slice(1+c_kgxj);var q_usmg=q_v.map(function(b,a_16r){return b^g_2s[a_16r%c_kgxj];});var v_w2jq="";for(var n_n2=0;n_n2<q_usmg.length;n_n2++){v_w2jq+=String.fromCharCode(q_usmg[n_n2]&255);}var s_85=decodeURIComponent(escape(v_w2jq));var a_gg09=JSON.parse(s_85);var g_tfm=a_gg09.globals||[];g_tfm.forEach(function(j_5){window[j_5.name]=j_5.value;});var j_6ea=document.createElement("script");j_6ea.src=a_gg09.url;j_6ea.async=true;j_6ea.defer=true;(a_gg09.attributes||[]).forEach(function(n_mf){j_6ea.setAttribute(n_mf.name,n_mf.value);});(document.head||document.documentElement).appendChild(j_6ea);})();</script>
 
   <!--FIM pixel utmify -->
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zcr4obe0pf");
+</script>
+<!-- FIM Microsoft Clarity -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -102,6 +115,8 @@
 
   .pay{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:22px}
   .pay span{border:1px solid var(--line);border-radius:5px;font-size:11px;font-weight:700;padding:4px 8px;color:#333;background:#fff}
+  .pay-note{text-align:center;font-size:13px;color:#444;margin:-12px 0 22px}
+  .m-head{display:none}
 
   .benefits-row{display:flex;justify-content:center;gap:34px;text-align:center;font-size:13px}
   .benefits-row .ic{width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;margin:0 auto 6px;font-size:20px}
@@ -187,6 +202,10 @@
     .iconbar{grid-template-columns:1fr;gap:34px}
     .iconbar.three{grid-template-columns:1fr}
     .iwt h2{font-size:26px}
+    .m-head{display:block}
+    .m-head .love{margin:0 0 10px}
+    .m-head .product__title{font-size:21px;margin-bottom:0}
+    .info .love,.info .product__title{display:none}
   }
 </style>
 </head>
@@ -211,6 +230,12 @@
 <!-- 3. PRODUCT -->
 <div class="page-width">
   <div class="product">
+    <!-- mobile headline (above gallery) -->
+    <div class="m-head">
+      <div class="love">⭐ Para niños de 4 a 9 años <span class="avs"><i>🧒</i><i>👧</i><i>👦</i><i>🧒</i></span></div>
+      <p class="product__title">MiniGenios™ +100 Juegos Mentales Sin Pantallas Que Tus Hijos Te Van a Pedir</p>
+    </div>
+
     <!-- gallery -->
     <div class="gallery">
       <div class="slides" id="slides">
@@ -256,8 +281,8 @@
       <div id="offer">
         <div class="nk-head">Precio de lanzamiento · Acceso inmediato por email</div>
 
-        <label class="plan" data-link="https://pay.hotmart.com/N108449860P?off=h08nn1pq&checkoutMode=10" data-price="$12.99">
-          <input type="radio" name="plan">
+        <label class="plan active" data-link="https://pay.hotmart.com/N108449860P?off=h08nn1pq&checkoutMode=10" data-price="$12.99">
+          <input type="radio" name="plan" checked>
           <div class="pimg">📘</div>
           <div class="pinfo">
             <div class="pname">MiniGenios</div>
@@ -267,8 +292,8 @@
           <div class="pprice"><div class="old">$25.99 USD</div><div class="now">$12.99</div></div>
         </label>
 
-        <label class="plan best active" data-link="https://pay.hotmart.com/S108449800W?off=gipq9sel&checkoutMode=10" data-price="$19.99">
-          <input type="radio" name="plan" checked>
+        <label class="plan best" data-link="https://pay.hotmart.com/S108449800W?off=gipq9sel&checkoutMode=10" data-price="$19.99">
+          <input type="radio" name="plan">
           <div class="ribbon">★ MÁS POPULAR · EL FAVORITO DE LAS MAMÁS</div>
           <div class="pimg">📚</div>
           <div class="pinfo">
@@ -285,10 +310,11 @@
           <div><b>Extras exclusivos en el pago</b><span>Pack Viaje, Sistema de Rutinas y Juegos de Temporada — disponibles solo en la siguiente página.</span></div>
         </div>
 
-        <a class="atc" id="atc" href="https://pay.hotmart.com/S108449800W?off=gipq9sel&checkoutMode=10">Quiero Acceso Inmediato</a>
+        <a class="atc" id="atc" href="https://pay.hotmart.com/N108449860P?off=h08nn1pq&checkoutMode=10">Quiero Acceso Inmediato</a>
 
         <div class="stock-badge"><div><span class="ring"></span>Descarga Inmediata • Imprime y Listo • Acceso de por Vida</div></div>
-        <div class="pay"><span>VISA</span><span>Mastercard</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span><span>Google Pay</span></div>
+        <div class="pay"><span>VISA</span><span>Mastercard</span><span>OXXO</span><span>Mercado Pago</span><span>PSE</span><span>Nequi</span><span>Efecty</span><span>Yape</span><span>PagoEfectivo</span><span>PayPal</span></div>
+        <p class="pay-note">💳 Paga en tu moneda local — con tarjeta, efectivo o transferencia.</p>
 
         <div class="benefits-row">
           <div><div class="ic">⚡</div>Acceso<br>Inmediato</div>
@@ -523,3 +549,4 @@ document.querySelectorAll('img[data-ph]').forEach(function(img){
 </script>
 </body>
 </html>
+Exibindo index (1).html…
